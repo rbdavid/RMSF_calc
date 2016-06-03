@@ -1,5 +1,5 @@
-##!/mnt/lustre_fs/users/mjmcc/apps/python2.7/bin/python
 #!/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+##!/mnt/lustre_fs/users/mjmcc/apps/python2.7/bin/python
 # ----------------------------------------
 # USAGE:
 
@@ -39,7 +39,7 @@ def ffprint(string):
 
 # ----------------------------------------
 # MAIN PROGRAM:
-
+ffprint('Beginning to prep the avg and u universes')
 # LOAD IN REFERENCE STRUCTURE
 avg = MDAnalysis.Universe(avg_pdb)
 avg_align = avg.select_atoms(alignment)
@@ -60,9 +60,9 @@ for i in range(nRes):
 	pos_list = []
 	temp_res = avg_important.residues[i]
 	avg_COM[i] = temp_res.center_of_mass()
-	for j in range(len(sel_list)):
-		pos_list.append(temp_res.select_atoms('%s' %(sel_list[j][1])).coordinates())
-		temp_list.append(len(temp_res.select_atoms('%s' %(sel_list[j][1]))))
+	for j in range(len(sel)):
+		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).coordinates())
+		temp_list.append(len(temp_res.select_atoms('%s' %(sel[j][1]))))
 	
 	avg_pos[i] = pos_list
 	nAtoms[i] = temp_list
@@ -102,8 +102,8 @@ while start <= end:
 		
 		for i in range(nRes):
 			temp_res = u_important.residues[i]
-			for j in range(len(sel_list)):
-				temp_pos = temp_res.select_atoms('%s' %(sel_list[j][1])).coordinates()
+			for j in range(len(sel)):
+				temp_pos = temp_res.select_atoms('%s' %(sel[j][1])).coordinates()
 				dist2[i][j] += MSD(temp_pos,avg_pos[i][j],nAtoms[i])
 			dist2[i][-1] += MSD(temp_res.center_of_mass(),avg_COM[i],1)
 		
@@ -125,7 +125,7 @@ dist2 = sqrt(dist2)
 
 out2 = open('%s.residues_rmsf.dat' %(system),'w')
 for i in range(nRes):
-	for j in range(len(sel_list)):
+	for j in range(len(sel)):
 		out2.write('%f   ' %(dist2[i][j]))
 	out2.write('\n')
 out2.close()
