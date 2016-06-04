@@ -30,6 +30,8 @@ zeros = np.zeros
 sqrt = np.sqrt
 flush = sys.stdout.flush
 
+nSel = len(sel)
+
 # ----------------------------------------
 # SUBROUTINES:
 
@@ -61,7 +63,7 @@ for i in range(nRes):
 	temp_res = avg_important.residues[i]
 	res_out.write('%s   %d   %d\n' %(temp_res.resname, temp_res.resid, temp_res.resid+167))
 	avg_COM[i] = temp_res.center_of_mass()
-	for j in range(len(sel)):
+	for j in range(nSel):
 		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).coordinates())
 		temp_list.append(len(temp_res.select_atoms('%s' %(sel[j][1]))))
 	
@@ -105,7 +107,7 @@ while start <= end:
 		
 		for i in range(nRes):
 			temp_res = u_important.residues[i]
-			for j in range(len(sel)):
+			for j in range(nSel):
 				temp_pos = temp_res.select_atoms('%s' %(sel[j][1])).coordinates()
 				dist2[i][j] += MSD(temp_pos,avg_pos[i][j],nAtoms[i])
 			dist2[i][-1] += MSD(temp_res.center_of_mass(),avg_COM[i],1)
@@ -128,7 +130,7 @@ dist2 = sqrt(dist2)
 
 out2 = open('%s.residues_rmsf.dat' %(system),'w')
 for i in range(nRes):
-	for j in range(len(sel)):
+	for j in range(nSel):
 		out2.write('%f   ' %(dist2[i][j]))
 	out2.write('\n')
 out2.close()
