@@ -59,6 +59,7 @@ for i in range(nRes):
 	temp_list = []
 	pos_list = []
 	temp_res = avg_important.residues[i]
+	res_out.write('%s   %d   %d\n' %(temp_res.resname, temp_res.resid, temp_res.resid+167))
 	avg_COM[i] = temp_res.center_of_mass()
 	for j in range(len(sel)):
 		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).coordinates())
@@ -66,6 +67,8 @@ for i in range(nRes):
 	
 	avg_pos[i] = pos_list
 	nAtoms[i] = temp_list
+
+res_out.close()
 
 ffprint('Initialized and filled array with average residue coords. Also, created list of atoms to be analyzed for RMSF')
 
