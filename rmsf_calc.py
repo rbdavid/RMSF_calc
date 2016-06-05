@@ -61,7 +61,7 @@ for i in range(nRes):
 	temp_list = []
 	pos_list = []
 	temp_res = avg_important.residues[i]
-	res_out.write('%s   %d   %d\n' %(temp_res.resname, temp_res.resid, temp_res.resid+167))
+	res_out.write('%s   %d   %d\n' %(temp_res.name, temp_res.id, temp_res.id+167))
 	avg_COM[i] = temp_res.center_of_mass()
 	for j in range(nSel):
 		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).coordinates())
@@ -80,6 +80,8 @@ u_align = u.select_atoms(alignment)
 u_important = u.select_atoms(important)
 u_backbone = u.select_atoms('backbone')
 u_substrate = u.select_atoms('nucleic or resname A5 or resname A3 or resname U5 or resname atp or resname adp or resname PHX or resname MG')
+
+u_substrate_res = len(u_substrate.residues)
 
 if nRes != len(u_important.residues):
 	ffprint('Number of residues in the average structure: %d, Number of residues in the trajectory: %d. Obviously %d != %d. Fix it.' %(nRes,len(u_important.residues),nRes,len(u_important.residues)))
