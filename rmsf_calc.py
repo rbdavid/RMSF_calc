@@ -56,7 +56,7 @@ nRes = len(avg_important.residues)
 nAtoms = ['']*nRes
 avg_pos = ['']*nRes 
 avg_COM = zeros((nRes,3))
-res_out = open('%s.residue_list.dat' %(system),'w')
+res_out = open('%s.residues_list.dat' %(system),'w')
 for i in range(nRes):
 	temp_list = []
 	pos_list = []
@@ -111,7 +111,8 @@ while start <= end:
 			temp_res = u_important.residues[i]
 			for j in range(nSel):
 				temp_pos = temp_res.select_atoms('%s' %(sel[j][1])).coordinates()
-				dist2[i][j] += MSD(temp_pos,avg_pos[i][j],nAtoms[i])
+#				print MSD(temp_pos,avg_pos[i][j],nAtoms[i][j]),nAtoms[i][j]
+				dist2[i][j] += MSD(temp_pos,avg_pos[i][j],nAtoms[i][j])
 			dist2[i][-1] += MSD(temp_res.center_of_mass(),avg_COM[i],1)
 		
 		if ts.frame%1000 == 0:
