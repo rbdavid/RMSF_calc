@@ -49,7 +49,7 @@ avg_important = avg.select_atoms(important)
 avg_backbone = avg.select_atoms('backbone')
 
 avg_important.translate(-avg_backbone.center_of_mass())
-pos0 = avg_align.coordinates()
+pos0 = avg_align.positions
 
 nRes = len(avg_important.residues)
 
@@ -61,10 +61,10 @@ for i in range(nRes):
 	temp_list = []
 	pos_list = []
 	temp_res = avg_important.residues[i]
-	res_out.write('%s   %d   %d\n' %(temp_res.name, temp_res.id, temp_res.id+167))
+	res_out.write('%s   %d   %d\n' %(temp_res.resname, temp_res.resid, temp_res.resid+167))
 	avg_COM[i] = temp_res.center_of_mass()
 	for j in range(nSel):
-		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).coordinates())
+		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).positions)
 		temp_list.append(len(temp_res.select_atoms('%s' %(sel[j][1]))))
 	
 	avg_pos[i] = pos_list
@@ -104,13 +104,13 @@ while start <= end:
 			t = wrapping(COM,dims)
 			u_substrate.residues[i].atoms.translate(t)
 
-		R, d = rotation_matrix(u_align.coordinates(),pos0)
+		R, d = rotation_matrix(u_align.positions,pos0)
 		u_important.rotate(R)
 		
 		for i in range(nRes):
 			temp_res = u_important.residues[i]
 			for j in range(nSel):
-				temp_pos = temp_res.select_atoms('%s' %(sel[j][1])).coordinates()
+				temp_pos = temp_res.select_atoms('%s' %(sel[j][1])).positions
 #				print MSD(temp_pos,avg_pos[i][j],nAtoms[i][j]),nAtoms[i][j]
 				dist2[i][j] += MSD(temp_pos,avg_pos[i][j],nAtoms[i][j])
 			dist2[i][-1] += MSD(temp_res.center_of_mass(),avg_COM[i],1)
