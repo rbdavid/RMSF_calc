@@ -43,7 +43,7 @@ def ffprint(string):
 # MAIN PROGRAM:
 ffprint('Beginning to prep the avg and u universes')
 # LOAD IN REFERENCE STRUCTURE
-avg = MDAnalysis.Universe('%s%03d.%03d.avg_structure.pdb' %(avg_log,start,end))
+avg = MDAnalysis.Universe('%s%03d.%03d.avg_structure.pdb' %(avg_loc,start,end))
 avg_align = avg.select_atoms(alignment)
 avg_important = avg.select_atoms(important)
 avg_backbone = avg.select_atoms('backbone')
