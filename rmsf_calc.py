@@ -16,7 +16,7 @@ from distance_functions import *
 # ----------------------------------------
 # VARIABLE DECLARATION
 
-avg_pdb = sys.argv[1]
+avg_loc = sys.argv[1]
 pdb_file = sys.argv[2]
 traj_loc = sys.argv[3]
 start = int(sys.argv[4])
@@ -43,7 +43,7 @@ def ffprint(string):
 # MAIN PROGRAM:
 ffprint('Beginning to prep the avg and u universes')
 # LOAD IN REFERENCE STRUCTURE
-avg = MDAnalysis.Universe(avg_pdb)
+avg = MDAnalysis.Universe('%s%03d.%03d.avg_structure.pdb' %(avg_log,start,end))
 avg_align = avg.select_atoms(alignment)
 avg_important = avg.select_atoms(important)
 avg_backbone = avg.select_atoms('backbone')
