@@ -7,7 +7,6 @@
 
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/software/usr/gcc-4.9.2/lib64"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/software/usr/hpcx-v1.2.0-292-gcc-MLNX_OFED_LINUX-2.4-1.0.0-redhat6.6/ompi-mellanox-v1.8/lib"
-
 export PYTHON_EGG_CACHE="./"
 
 AVG_LOC=/mnt/lustre_fs/users/rbdavid/molec_machines/dns3h/Analysis/Avg_structure/AMBER_apo/newAvg/
