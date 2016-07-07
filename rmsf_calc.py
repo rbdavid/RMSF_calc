@@ -46,9 +46,8 @@ ffprint('Beginning to prep the avg and u universes')
 avg = MDAnalysis.Universe('%s%03d.%03d.avg_structure.pdb' %(avg_loc,start,end))
 avg_align = avg.select_atoms(alignment)
 avg_important = avg.select_atoms(important)
-avg_backbone = avg.select_atoms('backbone')
 
-avg_important.translate(-avg_backbone.center_of_mass())
+avg_important.translate(-avg_align.center_of_mass())
 pos0 = avg_align.positions
 
 nRes = len(avg_important.residues)
@@ -78,7 +77,6 @@ ffprint('Initialized and filled array with average residue coords. Also, created
 u = MDAnalysis.Universe(pdb_file)
 u_align = u.select_atoms(alignment)
 u_important = u.select_atoms(important)
-u_backbone = u.select_atoms('backbone')
 u_substrate = u.select_atoms('nucleic or resname A5 or resname A3 or resname U5 or resname atp or resname adp or resname PHX or resname MG')
 
 u_substrate_res = len(u_substrate.residues)
@@ -87,7 +85,7 @@ if nRes != len(u_important.residues):
 	ffprint('Number of residues in the average structure: %d, Number of residues in the trajectory: %d. Obviously %d != %d. Fix it.' %(nRes,len(u_important.residues),nRes,len(u_important.residues)))
 	sys.exit()
 
-dist2 = zeros((nRes,5))
+dist2 = zeros((nRes,nSel+1))
 ffprint('Beginning trajectory analysis')
 nSteps = 0
 while start <= end:
@@ -96,7 +94,7 @@ while start <= end:
 	nSteps += len(u.trajectory)
 	for ts in u.trajectory:
 		dims = u.dimensions[:3]
-		u_important.translate(-u_backbone.center_of_mass())
+		u_important.translate(-u_align.center_of_mass())
 
 		for i in range(u_substrate_res):
 			COM = zeros(3)
