@@ -21,25 +21,13 @@ flush = sys.stdout.flush
 # VARIABLE DECLARATION
 
 config_file = sys.argv[1]	# Local or Global positon of the config file that holds all the values for the parameters
-
-necessary_parameters = [pdb_file,traj_loc,start,end,system,Wrapped] ###...
-
-avg_loc = sys.argv[1]
-pdb_file = sys.argv[2]
-traj_loc = sys.argv[3]
-start = int(sys.argv[4])
-end = int(sys.argv[5])
-system = sys.argv[6]
-
-alignment = 'protein and name CA and (resid 20:25 or resid 50:55 or resid 73:75 or resid 90:94 or resid 112:116 or resid 142:147 or resid 165:169 or resid 190:194 or resid 214:218 or resid 236:240 or resid 253:258 or resid 303:307)'
-important = '(protein or nucleic or resname A5 or resname A3 or resname U5 or resname atp or resname adp or resname PHX or resname MG)'
-
+necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped'] ###...
 nSel = len(sel)
 
 # ----------------------------------------
 # SUBROUTINES:
 
-def ffprint(string):		# Useful function to use when on a system that has a large buffer memory
+def ffprint(string):		# Useful function to use when on a computer that has a large buffer memory
 	print '%s' %(string)
 	flush()
 
@@ -49,6 +37,12 @@ def config_parser(config_file):	# Function to take config file and create/fill t
 		parameters[necessary_parameters[i]] = ''
 
 	# SETTING DEFAULT PARAMETERS FOR OPTIONAL PARAMETERS:
+	parameters['alignment'] = 'protein'
+	parameters['important'] = 'protein'
+	parameters['substrate'] = 'protein'
+	parameters['residue_offset'] = 0
+	parameters['write_summary'] = False 
+	parameters['write_overview'] = False
 
 	# GRABBING PARAMETER VALUES FROM THE CONFIG FILE:
 	execfile(config_file,parameters)
@@ -69,21 +63,18 @@ ffprint('Beginning to prep the avg and u universes')
 avg = MDAnalysis.Universe(parameters['avg_pdb'])
 avg_align = avg.select_atoms(parameters['alignment'])
 avg_important = avg.select_atoms(parameters['important'])
-# TRANSLATE THE IMPORTANT SELECTION BY THE COM OF THE ALIGNMENT SELECTION; GATHER IMPORTANT INFORMATION ABOUT THE IMPORTANT SELECTION
-avg_important.translate(-avg_align.center_of_mass())
-pos0 = avg_align.positions
+avg_important.translate(-avg_align.center_of_mass())	# translate the important selection by the COM of the alignment selection
+pos0 = avg_align.positions		# gather the average position
 nRes = avg_important.n_residues
 
 nAtoms = ['']*nRes
 avg_pos = ['']*nRes 
-avg_COM = zeros((nRes,3))
-res_out = open('%s.residues_list.dat' %(system),'w')
+res_out = open('%s.residues_list.dat' %(parameters['system']),'w')
 for i in range(nRes):
 	temp_list = []
 	pos_list = []
 	temp_res = avg_important.residues[i]
 	res_out.write('%s   %d   %d\n' %(temp_res.resname, temp_res.resid, temp_res.resid+167)) ### This offset value is very specific to Dengue NS3... need to make a general parameter to be read in...
-	avg_COM[i] = temp_res.center_of_mass()
 	for j in range(nSel):
 		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).positions)
 		temp_list.append(temp_res.select_atoms('%s' %(sel[j][1])).n_atoms)
@@ -111,7 +102,7 @@ dist2 = zeros((nRes,nSel))
 ffprint('Beginning trajectory analysis')
 nSteps = 0
 start = parameters['start']
-while start <= end:
+while start <= parameters['end']:
 	ffprint('Loading/Analyzing trajectory %s' %(start))
 	u.load_new('%s/production.%s/production.%s.dcd' %(parameters['traj_loc'],start,start))
 	nSteps += len(u.trajectory)
@@ -146,6 +137,6 @@ ffprint('Finished trajectory analysis.')
 dist2 /= nSteps
 dist2 = sqrt(dist2)
 # WRITING RMSF RESULTS OUT TO FILE
-with open('%s_RMSF.dat' %(parameters['system']),'w') as f:
+with open('%03d.%03d.%s.RMSF.dat' %(parameters['start'],parameters['end'],parameters['system']),'w') as f:
 	np.savetxt(f,dist2)
 
