@@ -21,7 +21,8 @@ flush = sys.stdout.flush
 # VARIABLE DECLARATION
 
 config_file = sys.argv[1]	# Local or Global positon of the config file that holds all the values for the parameters
-necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped'] ###...
+necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###...
+all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','residue_offset','write_summary']
 nSel = len(sel)
 
 # ----------------------------------------
@@ -42,7 +43,6 @@ def config_parser(config_file):	# Function to take config file and create/fill t
 	parameters['substrate'] = 'protein'
 	parameters['residue_offset'] = 0
 	parameters['write_summary'] = False 
-	parameters['write_overview'] = False
 
 	# GRABBING PARAMETER VALUES FROM THE CONFIG FILE:
 	execfile(config_file,parameters)
@@ -137,6 +137,6 @@ ffprint('Finished trajectory analysis.')
 dist2 /= nSteps
 dist2 = sqrt(dist2)
 # WRITING RMSF RESULTS OUT TO FILE
-with open('%03d.%03d.%s.RMSF.dat' %(parameters['start'],parameters['end'],parameters['system']),'w') as f:
+with open('%s.dat' %(parameters['rmsf_filename']),'w') as f:
 	np.savetxt(f,dist2)
 
