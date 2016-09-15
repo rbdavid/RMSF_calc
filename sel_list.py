@@ -19,10 +19,15 @@ sel2 = 'backbone'
 sel3 = 'name CA'
 
 # SIMPLE SELECTION STRINGS TO USE FOR THE DESIRED SELECTIONS
-sugar = " name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' "	# DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...
+sugar = " name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2'" + " C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'"		# DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...
 sugar_5= " name HO5' O5' or " + sugar
 sugar_3= sugar + " O3' HO3' "
-base = ' name N9 C8 H8 N7 C5 C6 N6 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3'	# selection string that will select all appropriate atoms for any of the nucleic residues...
+base = ' name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3'	# selection string that will select all appropriate atoms for any of the nucleic residues...
+
+a_phos = 'name O5* O2A O1A PA O3A'
+b_phos = 'name PB O1B O2B O3B'
+g_phos = 'name PG O1G O2G O3G'
+inorg_phos = 'name P O1 H1 O2 H2 O3 O4'
 
 selection_list = []
 
@@ -33,6 +38,7 @@ for i in range(nRes):
 		selection_list.append(u_important.residues[i].select_atoms(sel1))
 		selection_list.append(u_important.residues[i].select_atoms(sel2))
 		selection_list.append(u_important.residues[i].select_atoms(sel3))
+
 	elif temp_resname in nucleic.resnames:
 		selection_list.append(u_important.residues[i].select_atoms(base))
 		if temp_resname in ['A5','U5','C5','G5']:
@@ -44,7 +50,18 @@ for i in range(nRes):
 			selection_list.append(u_important.residues[i].select_atoms(sugar))
 		selection_list.append(u_important.select_atoms("(resid %s and anme P OP1 OP2 O5') or bynum %s" %(u_important.residues[i].resid,u_important.residues[i-1][-1].index+1)))
 	elif temp_resname in triphos.resnames:
-		### ... Develop these atom selections...
+		if temp_resname in ['atp','adp']:
+			selection_list.append(u_important.residues[i].select_atoms(base))
+			selection_list.append(u_important.residues[i].select_atoms(sugar))
+		if temp_resname == 'atp':
+			selection_list.append(u_important.residues[i].select_atoms(a_phos))
+			selection_list.append(u_important.residues[i].select_atoms(b_phos))
+			selection_list.append(u_important.residues[i].select_atoms(g_phos))
+		if temp_resname == 'adp':
+			selection_list.append(u_important.residues[i].select_atoms(a_phos))
+			selection_list.append(u_important.residues[i].select_atoms(b_phos))
+		if temp_resname == 'PHX':
+			selection_list.append(u_important.residues[i].select_atoms(inorg_phos))
 
 	elif temp_resname in other.resnames:
 		selection_list.append(u_important.residues[i])
