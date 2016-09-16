@@ -32,39 +32,57 @@ inorg_phos = 'name P O1 H1 O2 H2 O3 O4'
 selection_list = []
 
 ### BEGINNING THE SELECTION LIST WITH PROTEIN SELECTIONS:
-for i in range(nRes):
-	temp_resname = u_important.residues[i].resname
-	if temp_resname in pro.resnames:
-		selection_list.append(u_important.residues[i].select_atoms(sel1))
-		selection_list.append(u_important.residues[i].select_atoms(sel2))
-		selection_list.append(u_important.residues[i].select_atoms(sel3))
-
-	elif temp_resname in nucleic.resnames:
-		selection_list.append(u_important.residues[i].select_atoms(base))
-		if temp_resname in ['A5','U5','C5','G5']:
-			selection_list.append(u_important.residues[i].select_atoms(sugar_5))
-			continue
-		elif temp_resname in ['A3','U3','C3','G3']:
-			selection_list.append(u_important.residues[i].select_atoms(sugar_3))
-		else:
-			selection_list.append(u_important.residues[i].select_atoms(sugar))
-		selection_list.append(u_important.select_atoms("(resid %s and anme P OP1 OP2 O5') or bynum %s" %(u_important.residues[i].resid,u_important.residues[i-1][-1].index+1)))
-	elif temp_resname in triphos.resnames:
-		if temp_resname in ['atp','adp']:
+with open('testing_selection_list.txt','w') as f:
+	for i in range(nRes):
+		temp_resname = u_important.residues[i].resname
+		if temp_resname in pro.resnames:
+			selection_list.append(u_important.residues[i].select_atoms(sel1))
+			f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sel1))
+			selection_list.append(u_important.residues[i].select_atoms(sel2))
+			f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sel2))
+			selection_list.append(u_important.residues[i].select_atoms(sel3))
+			f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sel3))
+	
+		elif temp_resname in nucleic.resnames:
 			selection_list.append(u_important.residues[i].select_atoms(base))
-			selection_list.append(u_important.residues[i].select_atoms(sugar))
-		if temp_resname == 'atp':
-			selection_list.append(u_important.residues[i].select_atoms(a_phos))
-			selection_list.append(u_important.residues[i].select_atoms(b_phos))
-			selection_list.append(u_important.residues[i].select_atoms(g_phos))
-		if temp_resname == 'adp':
-			selection_list.append(u_important.residues[i].select_atoms(a_phos))
-			selection_list.append(u_important.residues[i].select_atoms(b_phos))
-		if temp_resname == 'PHX':
-			selection_list.append(u_important.residues[i].select_atoms(inorg_phos))
+			f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,base))
+			if temp_resname in ['A5','U5','C5','G5']:
+				selection_list.append(u_important.residues[i].select_atoms(sugar_5))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sugar_5))
+				continue
+			elif temp_resname in ['A3','U3','C3','G3']:
+				selection_list.append(u_important.residues[i].select_atoms(sugar_3))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sugar_3))
+			else:
+				selection_list.append(u_important.residues[i].select_atoms(sugar))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sugar))
+			selection_list.append(u_important.select_atoms("(resid %s and anme P OP1 OP2 O5') or bynum %s" %(u_important.residues[i].resid,u_important.residues[i-1][-1].index+1)))
+			f.write('%03d    %s   %d   Phosphate\n' %(i,temp_resname,u_important.residues[i].n_atoms))
+			
+		elif temp_resname in triphos.resnames:
+			if temp_resname in ['atp','adp']:
+				selection_list.append(u_important.residues[i].select_atoms(base))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,base))
+				selection_list.append(u_important.residues[i].select_atoms(sugar))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,sugar))
+			if temp_resname == 'atp':
+				selection_list.append(u_important.residues[i].select_atoms(a_phos))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,a_phos))
+				selection_list.append(u_important.residues[i].select_atoms(b_phos))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,b_phos))
+				selection_list.append(u_important.residues[i].select_atoms(g_phos))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,g_phos))
+			if temp_resname == 'adp':
+				selection_list.append(u_important.residues[i].select_atoms(a_phos))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,a_phos))
+				selection_list.append(u_important.residues[i].select_atoms(b_phos))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,b_phos))
+			if temp_resname == 'PHX':
+				selection_list.append(u_important.residues[i].select_atoms(inorg_phos))
+				f.write('%03d    %s   %d   %s\n' %(i,temp_resname,u_important.residues[i].n_atoms,inorg_phos))
+	
+		elif temp_resname in other.resnames:
+			selection_list.append(u_important.residues[i])
+			f.write('%03d    %s   %d   MG\n' %(i,temp_resname,u_important.residues[i].n_atoms))
 
-	elif temp_resname in other.resnames:
-		selection_list.append(u_important.residues[i])
-
-### SEE WHAT THIS OUTPUTS;...
-
+print len(selection_list)
