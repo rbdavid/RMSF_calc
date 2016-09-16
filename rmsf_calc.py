@@ -22,7 +22,7 @@ flush = sys.stdout.flush
 
 config_file = sys.argv[1]	# Local or Global positon of the config file that holds all the values for the parameters
 necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###...
-all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','residue_offset','write_summary']
+all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','write_summary']
 nSel = len(sel)
 
 # ----------------------------------------
@@ -41,7 +41,6 @@ def config_parser(config_file):	# Function to take config file and create/fill t
 	parameters['alignment'] = 'protein'
 	parameters['important'] = 'protein'
 	parameters['substrate'] = 'protein'
-	parameters['residue_offset'] = 0
 	parameters['write_summary'] = False 
 
 	# GRABBING PARAMETER VALUES FROM THE CONFIG FILE:

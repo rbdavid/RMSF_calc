@@ -1,0 +1,1379 @@
+000    GLY    9   not name H*
+000    GLY    9   backbone
+000    GLY    9   name CA
+001    SER   11   not name H*
+001    SER   11   backbone
+001    SER   11   name CA
+002    ALA   10   not name H*
+002    ALA   10   backbone
+002    ALA   10   name CA
+003    MET   17   not name H*
+003    MET   17   backbone
+003    MET   17   name CA
+004    GLY    7   not name H*
+004    GLY    7   backbone
+004    GLY    7   name CA
+005    GLU   15   not name H*
+005    GLU   15   backbone
+005    GLU   15   name CA
+006    PRO   14   not name H*
+006    PRO   14   backbone
+006    PRO   14   name CA
+007    ASP   12   not name H*
+007    ASP   12   backbone
+007    ASP   12   name CA
+008    TYR   21   not name H*
+008    TYR   21   backbone
+008    TYR   21   name CA
+009    GLU   15   not name H*
+009    GLU   15   backbone
+009    GLU   15   name CA
+010    VAL   16   not name H*
+010    VAL   16   backbone
+010    VAL   16   name CA
+011    ASP   12   not name H*
+011    ASP   12   backbone
+011    ASP   12   name CA
+012    GLU   15   not name H*
+012    GLU   15   backbone
+012    GLU   15   name CA
+013    ASP   12   not name H*
+013    ASP   12   backbone
+013    ASP   12   name CA
+014    ILE   19   not name H*
+014    ILE   19   backbone
+014    ILE   19   name CA
+015    PHE   20   not name H*
+015    PHE   20   backbone
+015    PHE   20   name CA
+016    ARG   24   not name H*
+016    ARG   24   backbone
+016    ARG   24   name CA
+017    LYS   22   not name H*
+017    LYS   22   backbone
+017    LYS   22   name CA
+018    LYS   22   not name H*
+018    LYS   22   backbone
+018    LYS   22   name CA
+019    ARG   24   not name H*
+019    ARG   24   backbone
+019    ARG   24   name CA
+020    LEU   19   not name H*
+020    LEU   19   backbone
+020    LEU   19   name CA
+021    THR   14   not name H*
+021    THR   14   backbone
+021    THR   14   name CA
+022    ILE   19   not name H*
+022    ILE   19   backbone
+022    ILE   19   name CA
+023    MET   17   not name H*
+023    MET   17   backbone
+023    MET   17   name CA
+024    ASP   12   not name H*
+024    ASP   12   backbone
+024    ASP   12   name CA
+025    LEU   19   not name H*
+025    LEU   19   backbone
+025    LEU   19   name CA
+026    HID   17   not name H*
+026    HID   17   backbone
+026    HID   17   name CA
+027    PRO   14   not name H*
+027    PRO   14   backbone
+027    PRO   14   name CA
+028    GLY    7   not name H*
+028    GLY    7   backbone
+028    GLY    7   name CA
+029    ALA   10   not name H*
+029    ALA   10   backbone
+029    ALA   10   name CA
+030    GLY    7   not name H*
+030    GLY    7   backbone
+030    GLY    7   name CA
+031    LYS   22   not name H*
+031    LYS   22   backbone
+031    LYS   22   name CA
+032    THR   14   not name H*
+032    THR   14   backbone
+032    THR   14   name CA
+033    LYS   22   not name H*
+033    LYS   22   backbone
+033    LYS   22   name CA
+034    ARG   24   not name H*
+034    ARG   24   backbone
+034    ARG   24   name CA
+035    ILE   19   not name H*
+035    ILE   19   backbone
+035    ILE   19   name CA
+036    LEU   19   not name H*
+036    LEU   19   backbone
+036    LEU   19   name CA
+037    PRO   14   not name H*
+037    PRO   14   backbone
+037    PRO   14   name CA
+038    SER   11   not name H*
+038    SER   11   backbone
+038    SER   11   name CA
+039    ILE   19   not name H*
+039    ILE   19   backbone
+039    ILE   19   name CA
+040    VAL   16   not name H*
+040    VAL   16   backbone
+040    VAL   16   name CA
+041    ARG   24   not name H*
+041    ARG   24   backbone
+041    ARG   24   name CA
+042    GLU   15   not name H*
+042    GLU   15   backbone
+042    GLU   15   name CA
+043    ALA   10   not name H*
+043    ALA   10   backbone
+043    ALA   10   name CA
+044    LEU   19   not name H*
+044    LEU   19   backbone
+044    LEU   19   name CA
+045    LYS   22   not name H*
+045    LYS   22   backbone
+045    LYS   22   name CA
+046    ARG   24   not name H*
+046    ARG   24   backbone
+046    ARG   24   name CA
+047    ARG   24   not name H*
+047    ARG   24   backbone
+047    ARG   24   name CA
+048    LEU   19   not name H*
+048    LEU   19   backbone
+048    LEU   19   name CA
+049    ARG   24   not name H*
+049    ARG   24   backbone
+049    ARG   24   name CA
+050    THR   14   not name H*
+050    THR   14   backbone
+050    THR   14   name CA
+051    LEU   19   not name H*
+051    LEU   19   backbone
+051    LEU   19   name CA
+052    ILE   19   not name H*
+052    ILE   19   backbone
+052    ILE   19   name CA
+053    LEU   19   not name H*
+053    LEU   19   backbone
+053    LEU   19   name CA
+054    ALA   10   not name H*
+054    ALA   10   backbone
+054    ALA   10   name CA
+055    PRO   14   not name H*
+055    PRO   14   backbone
+055    PRO   14   name CA
+056    THR   14   not name H*
+056    THR   14   backbone
+056    THR   14   name CA
+057    ARG   24   not name H*
+057    ARG   24   backbone
+057    ARG   24   name CA
+058    VAL   16   not name H*
+058    VAL   16   backbone
+058    VAL   16   name CA
+059    VAL   16   not name H*
+059    VAL   16   backbone
+059    VAL   16   name CA
+060    ALA   10   not name H*
+060    ALA   10   backbone
+060    ALA   10   name CA
+061    ALA   10   not name H*
+061    ALA   10   backbone
+061    ALA   10   name CA
+062    GLU   15   not name H*
+062    GLU   15   backbone
+062    GLU   15   name CA
+063    MET   17   not name H*
+063    MET   17   backbone
+063    MET   17   name CA
+064    GLU   15   not name H*
+064    GLU   15   backbone
+064    GLU   15   name CA
+065    GLU   15   not name H*
+065    GLU   15   backbone
+065    GLU   15   name CA
+066    ALA   10   not name H*
+066    ALA   10   backbone
+066    ALA   10   name CA
+067    LEU   19   not name H*
+067    LEU   19   backbone
+067    LEU   19   name CA
+068    ARG   24   not name H*
+068    ARG   24   backbone
+068    ARG   24   name CA
+069    GLY    7   not name H*
+069    GLY    7   backbone
+069    GLY    7   name CA
+070    LEU   19   not name H*
+070    LEU   19   backbone
+070    LEU   19   name CA
+071    PRO   14   not name H*
+071    PRO   14   backbone
+071    PRO   14   name CA
+072    ILE   19   not name H*
+072    ILE   19   backbone
+072    ILE   19   name CA
+073    ARG   24   not name H*
+073    ARG   24   backbone
+073    ARG   24   name CA
+074    TYR   21   not name H*
+074    TYR   21   backbone
+074    TYR   21   name CA
+075    GLN   17   not name H*
+075    GLN   17   backbone
+075    GLN   17   name CA
+076    THR   14   not name H*
+076    THR   14   backbone
+076    THR   14   name CA
+077    PRO   14   not name H*
+077    PRO   14   backbone
+077    PRO   14   name CA
+078    ALA   10   not name H*
+078    ALA   10   backbone
+078    ALA   10   name CA
+079    VAL   16   not name H*
+079    VAL   16   backbone
+079    VAL   16   name CA
+080    LYS   22   not name H*
+080    LYS   22   backbone
+080    LYS   22   name CA
+081    SER   11   not name H*
+081    SER   11   backbone
+081    SER   11   name CA
+082    ASP   12   not name H*
+082    ASP   12   backbone
+082    ASP   12   name CA
+083    HID   17   not name H*
+083    HID   17   backbone
+083    HID   17   name CA
+084    THR   14   not name H*
+084    THR   14   backbone
+084    THR   14   name CA
+085    GLY    7   not name H*
+085    GLY    7   backbone
+085    GLY    7   name CA
+086    ARG   24   not name H*
+086    ARG   24   backbone
+086    ARG   24   name CA
+087    GLU   15   not name H*
+087    GLU   15   backbone
+087    GLU   15   name CA
+088    ILE   19   not name H*
+088    ILE   19   backbone
+088    ILE   19   name CA
+089    VAL   16   not name H*
+089    VAL   16   backbone
+089    VAL   16   name CA
+090    ASP   12   not name H*
+090    ASP   12   backbone
+090    ASP   12   name CA
+091    LEU   19   not name H*
+091    LEU   19   backbone
+091    LEU   19   name CA
+092    MET   17   not name H*
+092    MET   17   backbone
+092    MET   17   name CA
+093    CYS   11   not name H*
+093    CYS   11   backbone
+093    CYS   11   name CA
+094    HID   17   not name H*
+094    HID   17   backbone
+094    HID   17   name CA
+095    ALA   10   not name H*
+095    ALA   10   backbone
+095    ALA   10   name CA
+096    THR   14   not name H*
+096    THR   14   backbone
+096    THR   14   name CA
+097    PHE   20   not name H*
+097    PHE   20   backbone
+097    PHE   20   name CA
+098    THR   14   not name H*
+098    THR   14   backbone
+098    THR   14   name CA
+099    THR   14   not name H*
+099    THR   14   backbone
+099    THR   14   name CA
+100    ARG   24   not name H*
+100    ARG   24   backbone
+100    ARG   24   name CA
+101    LEU   19   not name H*
+101    LEU   19   backbone
+101    LEU   19   name CA
+102    LEU   19   not name H*
+102    LEU   19   backbone
+102    LEU   19   name CA
+103    SER   11   not name H*
+103    SER   11   backbone
+103    SER   11   name CA
+104    SER   11   not name H*
+104    SER   11   backbone
+104    SER   11   name CA
+105    THR   14   not name H*
+105    THR   14   backbone
+105    THR   14   name CA
+106    ARG   24   not name H*
+106    ARG   24   backbone
+106    ARG   24   name CA
+107    VAL   16   not name H*
+107    VAL   16   backbone
+107    VAL   16   name CA
+108    PRO   14   not name H*
+108    PRO   14   backbone
+108    PRO   14   name CA
+109    ASN   14   not name H*
+109    ASN   14   backbone
+109    ASN   14   name CA
+110    TYR   21   not name H*
+110    TYR   21   backbone
+110    TYR   21   name CA
+111    ASN   14   not name H*
+111    ASN   14   backbone
+111    ASN   14   name CA
+112    LEU   19   not name H*
+112    LEU   19   backbone
+112    LEU   19   name CA
+113    ILE   19   not name H*
+113    ILE   19   backbone
+113    ILE   19   name CA
+114    VAL   16   not name H*
+114    VAL   16   backbone
+114    VAL   16   name CA
+115    MET   17   not name H*
+115    MET   17   backbone
+115    MET   17   name CA
+116    ASP   12   not name H*
+116    ASP   12   backbone
+116    ASP   12   name CA
+117    GLU   15   not name H*
+117    GLU   15   backbone
+117    GLU   15   name CA
+118    ALA   10   not name H*
+118    ALA   10   backbone
+118    ALA   10   name CA
+119    HID   17   not name H*
+119    HID   17   backbone
+119    HID   17   name CA
+120    PHE   20   not name H*
+120    PHE   20   backbone
+120    PHE   20   name CA
+121    THR   14   not name H*
+121    THR   14   backbone
+121    THR   14   name CA
+122    ASP   12   not name H*
+122    ASP   12   backbone
+122    ASP   12   name CA
+123    PRO   14   not name H*
+123    PRO   14   backbone
+123    PRO   14   name CA
+124    CYS   11   not name H*
+124    CYS   11   backbone
+124    CYS   11   name CA
+125    SER   11   not name H*
+125    SER   11   backbone
+125    SER   11   name CA
+126    VAL   16   not name H*
+126    VAL   16   backbone
+126    VAL   16   name CA
+127    ALA   10   not name H*
+127    ALA   10   backbone
+127    ALA   10   name CA
+128    ALA   10   not name H*
+128    ALA   10   backbone
+128    ALA   10   name CA
+129    ARG   24   not name H*
+129    ARG   24   backbone
+129    ARG   24   name CA
+130    GLY    7   not name H*
+130    GLY    7   backbone
+130    GLY    7   name CA
+131    TYR   21   not name H*
+131    TYR   21   backbone
+131    TYR   21   name CA
+132    ILE   19   not name H*
+132    ILE   19   backbone
+132    ILE   19   name CA
+133    SER   11   not name H*
+133    SER   11   backbone
+133    SER   11   name CA
+134    THR   14   not name H*
+134    THR   14   backbone
+134    THR   14   name CA
+135    ARG   24   not name H*
+135    ARG   24   backbone
+135    ARG   24   name CA
+136    VAL   16   not name H*
+136    VAL   16   backbone
+136    VAL   16   name CA
+137    GLU   15   not name H*
+137    GLU   15   backbone
+137    GLU   15   name CA
+138    MET   17   not name H*
+138    MET   17   backbone
+138    MET   17   name CA
+139    GLY    7   not name H*
+139    GLY    7   backbone
+139    GLY    7   name CA
+140    GLU   15   not name H*
+140    GLU   15   backbone
+140    GLU   15   name CA
+141    ALA   10   not name H*
+141    ALA   10   backbone
+141    ALA   10   name CA
+142    ALA   10   not name H*
+142    ALA   10   backbone
+142    ALA   10   name CA
+143    ALA   10   not name H*
+143    ALA   10   backbone
+143    ALA   10   name CA
+144    ILE   19   not name H*
+144    ILE   19   backbone
+144    ILE   19   name CA
+145    PHE   20   not name H*
+145    PHE   20   backbone
+145    PHE   20   name CA
+146    MET   17   not name H*
+146    MET   17   backbone
+146    MET   17   name CA
+147    THR   14   not name H*
+147    THR   14   backbone
+147    THR   14   name CA
+148    ALA   10   not name H*
+148    ALA   10   backbone
+148    ALA   10   name CA
+149    THR   14   not name H*
+149    THR   14   backbone
+149    THR   14   name CA
+150    PRO   14   not name H*
+150    PRO   14   backbone
+150    PRO   14   name CA
+151    PRO   14   not name H*
+151    PRO   14   backbone
+151    PRO   14   name CA
+152    GLY    7   not name H*
+152    GLY    7   backbone
+152    GLY    7   name CA
+153    SER   11   not name H*
+153    SER   11   backbone
+153    SER   11   name CA
+154    ILE   19   not name H*
+154    ILE   19   backbone
+154    ILE   19   name CA
+155    ASP   12   not name H*
+155    ASP   12   backbone
+155    ASP   12   name CA
+156    PRO   14   not name H*
+156    PRO   14   backbone
+156    PRO   14   name CA
+157    PHE   20   not name H*
+157    PHE   20   backbone
+157    PHE   20   name CA
+158    PRO   14   not name H*
+158    PRO   14   backbone
+158    PRO   14   name CA
+159    GLN   17   not name H*
+159    GLN   17   backbone
+159    GLN   17   name CA
+160    SER   11   not name H*
+160    SER   11   backbone
+160    SER   11   name CA
+161    ASN   14   not name H*
+161    ASN   14   backbone
+161    ASN   14   name CA
+162    SER   11   not name H*
+162    SER   11   backbone
+162    SER   11   name CA
+163    PRO   14   not name H*
+163    PRO   14   backbone
+163    PRO   14   name CA
+164    ILE   19   not name H*
+164    ILE   19   backbone
+164    ILE   19   name CA
+165    GLU   15   not name H*
+165    GLU   15   backbone
+165    GLU   15   name CA
+166    ASP   12   not name H*
+166    ASP   12   backbone
+166    ASP   12   name CA
+167    ILE   19   not name H*
+167    ILE   19   backbone
+167    ILE   19   name CA
+168    GLU   15   not name H*
+168    GLU   15   backbone
+168    GLU   15   name CA
+169    ARG   24   not name H*
+169    ARG   24   backbone
+169    ARG   24   name CA
+170    GLU   15   not name H*
+170    GLU   15   backbone
+170    GLU   15   name CA
+171    ILE   19   not name H*
+171    ILE   19   backbone
+171    ILE   19   name CA
+172    PRO   14   not name H*
+172    PRO   14   backbone
+172    PRO   14   name CA
+173    GLU   15   not name H*
+173    GLU   15   backbone
+173    GLU   15   name CA
+174    ARG   24   not name H*
+174    ARG   24   backbone
+174    ARG   24   name CA
+175    SER   11   not name H*
+175    SER   11   backbone
+175    SER   11   name CA
+176    TRP   24   not name H*
+176    TRP   24   backbone
+176    TRP   24   name CA
+177    ASN   14   not name H*
+177    ASN   14   backbone
+177    ASN   14   name CA
+178    THR   14   not name H*
+178    THR   14   backbone
+178    THR   14   name CA
+179    GLY    7   not name H*
+179    GLY    7   backbone
+179    GLY    7   name CA
+180    PHE   20   not name H*
+180    PHE   20   backbone
+180    PHE   20   name CA
+181    ASP   12   not name H*
+181    ASP   12   backbone
+181    ASP   12   name CA
+182    TRP   24   not name H*
+182    TRP   24   backbone
+182    TRP   24   name CA
+183    ILE   19   not name H*
+183    ILE   19   backbone
+183    ILE   19   name CA
+184    THR   14   not name H*
+184    THR   14   backbone
+184    THR   14   name CA
+185    ASP   12   not name H*
+185    ASP   12   backbone
+185    ASP   12   name CA
+186    TYR   21   not name H*
+186    TYR   21   backbone
+186    TYR   21   name CA
+187    GLN   17   not name H*
+187    GLN   17   backbone
+187    GLN   17   name CA
+188    GLY    7   not name H*
+188    GLY    7   backbone
+188    GLY    7   name CA
+189    LYS   22   not name H*
+189    LYS   22   backbone
+189    LYS   22   name CA
+190    THR   14   not name H*
+190    THR   14   backbone
+190    THR   14   name CA
+191    VAL   16   not name H*
+191    VAL   16   backbone
+191    VAL   16   name CA
+192    TRP   24   not name H*
+192    TRP   24   backbone
+192    TRP   24   name CA
+193    PHE   20   not name H*
+193    PHE   20   backbone
+193    PHE   20   name CA
+194    VAL   16   not name H*
+194    VAL   16   backbone
+194    VAL   16   name CA
+195    PRO   14   not name H*
+195    PRO   14   backbone
+195    PRO   14   name CA
+196    SER   11   not name H*
+196    SER   11   backbone
+196    SER   11   name CA
+197    ILE   19   not name H*
+197    ILE   19   backbone
+197    ILE   19   name CA
+198    LYS   22   not name H*
+198    LYS   22   backbone
+198    LYS   22   name CA
+199    ALA   10   not name H*
+199    ALA   10   backbone
+199    ALA   10   name CA
+200    GLY    7   not name H*
+200    GLY    7   backbone
+200    GLY    7   name CA
+201    ASN   14   not name H*
+201    ASN   14   backbone
+201    ASN   14   name CA
+202    ASP   12   not name H*
+202    ASP   12   backbone
+202    ASP   12   name CA
+203    ILE   19   not name H*
+203    ILE   19   backbone
+203    ILE   19   name CA
+204    ALA   10   not name H*
+204    ALA   10   backbone
+204    ALA   10   name CA
+205    ASN   14   not name H*
+205    ASN   14   backbone
+205    ASN   14   name CA
+206    CYS   11   not name H*
+206    CYS   11   backbone
+206    CYS   11   name CA
+207    LEU   19   not name H*
+207    LEU   19   backbone
+207    LEU   19   name CA
+208    ARG   24   not name H*
+208    ARG   24   backbone
+208    ARG   24   name CA
+209    LYS   22   not name H*
+209    LYS   22   backbone
+209    LYS   22   name CA
+210    SER   11   not name H*
+210    SER   11   backbone
+210    SER   11   name CA
+211    GLY    7   not name H*
+211    GLY    7   backbone
+211    GLY    7   name CA
+212    LYS   22   not name H*
+212    LYS   22   backbone
+212    LYS   22   name CA
+213    ARG   24   not name H*
+213    ARG   24   backbone
+213    ARG   24   name CA
+214    VAL   16   not name H*
+214    VAL   16   backbone
+214    VAL   16   name CA
+215    ILE   19   not name H*
+215    ILE   19   backbone
+215    ILE   19   name CA
+216    GLN   17   not name H*
+216    GLN   17   backbone
+216    GLN   17   name CA
+217    LEU   19   not name H*
+217    LEU   19   backbone
+217    LEU   19   name CA
+218    SER   11   not name H*
+218    SER   11   backbone
+218    SER   11   name CA
+219    ARG   24   not name H*
+219    ARG   24   backbone
+219    ARG   24   name CA
+220    LYS   22   not name H*
+220    LYS   22   backbone
+220    LYS   22   name CA
+221    THR   14   not name H*
+221    THR   14   backbone
+221    THR   14   name CA
+222    PHE   20   not name H*
+222    PHE   20   backbone
+222    PHE   20   name CA
+223    ASP   12   not name H*
+223    ASP   12   backbone
+223    ASP   12   name CA
+224    THR   14   not name H*
+224    THR   14   backbone
+224    THR   14   name CA
+225    GLU   15   not name H*
+225    GLU   15   backbone
+225    GLU   15   name CA
+226    TYR   21   not name H*
+226    TYR   21   backbone
+226    TYR   21   name CA
+227    PRO   14   not name H*
+227    PRO   14   backbone
+227    PRO   14   name CA
+228    LYS   22   not name H*
+228    LYS   22   backbone
+228    LYS   22   name CA
+229    THR   14   not name H*
+229    THR   14   backbone
+229    THR   14   name CA
+230    LYS   22   not name H*
+230    LYS   22   backbone
+230    LYS   22   name CA
+231    LEU   19   not name H*
+231    LEU   19   backbone
+231    LEU   19   name CA
+232    THR   14   not name H*
+232    THR   14   backbone
+232    THR   14   name CA
+233    ASP   12   not name H*
+233    ASP   12   backbone
+233    ASP   12   name CA
+234    TRP   24   not name H*
+234    TRP   24   backbone
+234    TRP   24   name CA
+235    ASP   12   not name H*
+235    ASP   12   backbone
+235    ASP   12   name CA
+236    PHE   20   not name H*
+236    PHE   20   backbone
+236    PHE   20   name CA
+237    VAL   16   not name H*
+237    VAL   16   backbone
+237    VAL   16   name CA
+238    VAL   16   not name H*
+238    VAL   16   backbone
+238    VAL   16   name CA
+239    THR   14   not name H*
+239    THR   14   backbone
+239    THR   14   name CA
+240    THR   14   not name H*
+240    THR   14   backbone
+240    THR   14   name CA
+241    ASP   12   not name H*
+241    ASP   12   backbone
+241    ASP   12   name CA
+242    ILE   19   not name H*
+242    ILE   19   backbone
+242    ILE   19   name CA
+243    SER   11   not name H*
+243    SER   11   backbone
+243    SER   11   name CA
+244    GLU   15   not name H*
+244    GLU   15   backbone
+244    GLU   15   name CA
+245    MET   17   not name H*
+245    MET   17   backbone
+245    MET   17   name CA
+246    GLY    7   not name H*
+246    GLY    7   backbone
+246    GLY    7   name CA
+247    ALA   10   not name H*
+247    ALA   10   backbone
+247    ALA   10   name CA
+248    ASN   14   not name H*
+248    ASN   14   backbone
+248    ASN   14   name CA
+249    PHE   20   not name H*
+249    PHE   20   backbone
+249    PHE   20   name CA
+250    ARG   24   not name H*
+250    ARG   24   backbone
+250    ARG   24   name CA
+251    ALA   10   not name H*
+251    ALA   10   backbone
+251    ALA   10   name CA
+252    GLY    7   not name H*
+252    GLY    7   backbone
+252    GLY    7   name CA
+253    ARG   24   not name H*
+253    ARG   24   backbone
+253    ARG   24   name CA
+254    VAL   16   not name H*
+254    VAL   16   backbone
+254    VAL   16   name CA
+255    ILE   19   not name H*
+255    ILE   19   backbone
+255    ILE   19   name CA
+256    ASP   12   not name H*
+256    ASP   12   backbone
+256    ASP   12   name CA
+257    PRO   14   not name H*
+257    PRO   14   backbone
+257    PRO   14   name CA
+258    ARG   24   not name H*
+258    ARG   24   backbone
+258    ARG   24   name CA
+259    ARG   24   not name H*
+259    ARG   24   backbone
+259    ARG   24   name CA
+260    CYS   11   not name H*
+260    CYS   11   backbone
+260    CYS   11   name CA
+261    LEU   19   not name H*
+261    LEU   19   backbone
+261    LEU   19   name CA
+262    LYS   22   not name H*
+262    LYS   22   backbone
+262    LYS   22   name CA
+263    PRO   14   not name H*
+263    PRO   14   backbone
+263    PRO   14   name CA
+264    VAL   16   not name H*
+264    VAL   16   backbone
+264    VAL   16   name CA
+265    ILE   19   not name H*
+265    ILE   19   backbone
+265    ILE   19   name CA
+266    LEU   19   not name H*
+266    LEU   19   backbone
+266    LEU   19   name CA
+267    THR   14   not name H*
+267    THR   14   backbone
+267    THR   14   name CA
+268    ASP   12   not name H*
+268    ASP   12   backbone
+268    ASP   12   name CA
+269    GLY    7   not name H*
+269    GLY    7   backbone
+269    GLY    7   name CA
+270    PRO   14   not name H*
+270    PRO   14   backbone
+270    PRO   14   name CA
+271    GLU   15   not name H*
+271    GLU   15   backbone
+271    GLU   15   name CA
+272    ARG   24   not name H*
+272    ARG   24   backbone
+272    ARG   24   name CA
+273    VAL   16   not name H*
+273    VAL   16   backbone
+273    VAL   16   name CA
+274    ILE   19   not name H*
+274    ILE   19   backbone
+274    ILE   19   name CA
+275    LEU   19   not name H*
+275    LEU   19   backbone
+275    LEU   19   name CA
+276    ALA   10   not name H*
+276    ALA   10   backbone
+276    ALA   10   name CA
+277    GLY    7   not name H*
+277    GLY    7   backbone
+277    GLY    7   name CA
+278    PRO   14   not name H*
+278    PRO   14   backbone
+278    PRO   14   name CA
+279    ILE   19   not name H*
+279    ILE   19   backbone
+279    ILE   19   name CA
+280    PRO   14   not name H*
+280    PRO   14   backbone
+280    PRO   14   name CA
+281    VAL   16   not name H*
+281    VAL   16   backbone
+281    VAL   16   name CA
+282    THR   14   not name H*
+282    THR   14   backbone
+282    THR   14   name CA
+283    PRO   14   not name H*
+283    PRO   14   backbone
+283    PRO   14   name CA
+284    ALA   10   not name H*
+284    ALA   10   backbone
+284    ALA   10   name CA
+285    SER   11   not name H*
+285    SER   11   backbone
+285    SER   11   name CA
+286    ALA   10   not name H*
+286    ALA   10   backbone
+286    ALA   10   name CA
+287    ALA   10   not name H*
+287    ALA   10   backbone
+287    ALA   10   name CA
+288    GLN   17   not name H*
+288    GLN   17   backbone
+288    GLN   17   name CA
+289    ARG   24   not name H*
+289    ARG   24   backbone
+289    ARG   24   name CA
+290    ARG   24   not name H*
+290    ARG   24   backbone
+290    ARG   24   name CA
+291    GLY    7   not name H*
+291    GLY    7   backbone
+291    GLY    7   name CA
+292    ARG   24   not name H*
+292    ARG   24   backbone
+292    ARG   24   name CA
+293    ILE   19   not name H*
+293    ILE   19   backbone
+293    ILE   19   name CA
+294    GLY    7   not name H*
+294    GLY    7   backbone
+294    GLY    7   name CA
+295    ARG   24   not name H*
+295    ARG   24   backbone
+295    ARG   24   name CA
+296    ASN   14   not name H*
+296    ASN   14   backbone
+296    ASN   14   name CA
+297    PRO   14   not name H*
+297    PRO   14   backbone
+297    PRO   14   name CA
+298    ALA   10   not name H*
+298    ALA   10   backbone
+298    ALA   10   name CA
+299    GLN   17   not name H*
+299    GLN   17   backbone
+299    GLN   17   name CA
+300    GLU   15   not name H*
+300    GLU   15   backbone
+300    GLU   15   name CA
+301    ASP   12   not name H*
+301    ASP   12   backbone
+301    ASP   12   name CA
+302    ASP   12   not name H*
+302    ASP   12   backbone
+302    ASP   12   name CA
+303    GLN   17   not name H*
+303    GLN   17   backbone
+303    GLN   17   name CA
+304    TYR   21   not name H*
+304    TYR   21   backbone
+304    TYR   21   name CA
+305    VAL   16   not name H*
+305    VAL   16   backbone
+305    VAL   16   name CA
+306    PHE   20   not name H*
+306    PHE   20   backbone
+306    PHE   20   name CA
+307    SER   11   not name H*
+307    SER   11   backbone
+307    SER   11   name CA
+308    GLY    7   not name H*
+308    GLY    7   backbone
+308    GLY    7   name CA
+309    ASP   12   not name H*
+309    ASP   12   backbone
+309    ASP   12   name CA
+310    PRO   14   not name H*
+310    PRO   14   backbone
+310    PRO   14   name CA
+311    LEU   19   not name H*
+311    LEU   19   backbone
+311    LEU   19   name CA
+312    LYS   22   not name H*
+312    LYS   22   backbone
+312    LYS   22   name CA
+313    ASN   14   not name H*
+313    ASN   14   backbone
+313    ASN   14   name CA
+314    ASP   12   not name H*
+314    ASP   12   backbone
+314    ASP   12   name CA
+315    GLU   15   not name H*
+315    GLU   15   backbone
+315    GLU   15   name CA
+316    ASP   12   not name H*
+316    ASP   12   backbone
+316    ASP   12   name CA
+317    HID   17   not name H*
+317    HID   17   backbone
+317    HID   17   name CA
+318    ALA   10   not name H*
+318    ALA   10   backbone
+318    ALA   10   name CA
+319    HID   17   not name H*
+319    HID   17   backbone
+319    HID   17   name CA
+320    TRP   24   not name H*
+320    TRP   24   backbone
+320    TRP   24   name CA
+321    THR   14   not name H*
+321    THR   14   backbone
+321    THR   14   name CA
+322    GLU   15   not name H*
+322    GLU   15   backbone
+322    GLU   15   name CA
+323    ALA   10   not name H*
+323    ALA   10   backbone
+323    ALA   10   name CA
+324    LYS   22   not name H*
+324    LYS   22   backbone
+324    LYS   22   name CA
+325    MET   17   not name H*
+325    MET   17   backbone
+325    MET   17   name CA
+326    LEU   19   not name H*
+326    LEU   19   backbone
+326    LEU   19   name CA
+327    LEU   19   not name H*
+327    LEU   19   backbone
+327    LEU   19   name CA
+328    ASP   12   not name H*
+328    ASP   12   backbone
+328    ASP   12   name CA
+329    ASN   14   not name H*
+329    ASN   14   backbone
+329    ASN   14   name CA
+330    ILE   19   not name H*
+330    ILE   19   backbone
+330    ILE   19   name CA
+331    TYR   21   not name H*
+331    TYR   21   backbone
+331    TYR   21   name CA
+332    THR   14   not name H*
+332    THR   14   backbone
+332    THR   14   name CA
+333    PRO   14   not name H*
+333    PRO   14   backbone
+333    PRO   14   name CA
+334    GLU   15   not name H*
+334    GLU   15   backbone
+334    GLU   15   name CA
+335    GLY    7   not name H*
+335    GLY    7   backbone
+335    GLY    7   name CA
+336    ILE   19   not name H*
+336    ILE   19   backbone
+336    ILE   19   name CA
+337    ILE   19   not name H*
+337    ILE   19   backbone
+337    ILE   19   name CA
+338    PRO   14   not name H*
+338    PRO   14   backbone
+338    PRO   14   name CA
+339    THR   14   not name H*
+339    THR   14   backbone
+339    THR   14   name CA
+340    LEU   19   not name H*
+340    LEU   19   backbone
+340    LEU   19   name CA
+341    PHE   20   not name H*
+341    PHE   20   backbone
+341    PHE   20   name CA
+342    GLY    7   not name H*
+342    GLY    7   backbone
+342    GLY    7   name CA
+343    PRO   14   not name H*
+343    PRO   14   backbone
+343    PRO   14   name CA
+344    GLU   15   not name H*
+344    GLU   15   backbone
+344    GLU   15   name CA
+345    ARG   24   not name H*
+345    ARG   24   backbone
+345    ARG   24   name CA
+346    GLU   15   not name H*
+346    GLU   15   backbone
+346    GLU   15   name CA
+347    LYS   22   not name H*
+347    LYS   22   backbone
+347    LYS   22   name CA
+348    THR   14   not name H*
+348    THR   14   backbone
+348    THR   14   name CA
+349    GLN   17   not name H*
+349    GLN   17   backbone
+349    GLN   17   name CA
+350    ALA   10   not name H*
+350    ALA   10   backbone
+350    ALA   10   name CA
+351    ILE   19   not name H*
+351    ILE   19   backbone
+351    ILE   19   name CA
+352    ASP   12   not name H*
+352    ASP   12   backbone
+352    ASP   12   name CA
+353    GLY    7   not name H*
+353    GLY    7   backbone
+353    GLY    7   name CA
+354    GLU   15   not name H*
+354    GLU   15   backbone
+354    GLU   15   name CA
+355    PHE   20   not name H*
+355    PHE   20   backbone
+355    PHE   20   name CA
+356    ARG   24   not name H*
+356    ARG   24   backbone
+356    ARG   24   name CA
+357    LEU   19   not name H*
+357    LEU   19   backbone
+357    LEU   19   name CA
+358    ARG   24   not name H*
+358    ARG   24   backbone
+358    ARG   24   name CA
+359    GLY    7   not name H*
+359    GLY    7   backbone
+359    GLY    7   name CA
+360    GLU   15   not name H*
+360    GLU   15   backbone
+360    GLU   15   name CA
+361    GLN   17   not name H*
+361    GLN   17   backbone
+361    GLN   17   name CA
+362    ARG   24   not name H*
+362    ARG   24   backbone
+362    ARG   24   name CA
+363    LYS   22   not name H*
+363    LYS   22   backbone
+363    LYS   22   name CA
+364    THR   14   not name H*
+364    THR   14   backbone
+364    THR   14   name CA
+365    PHE   20   not name H*
+365    PHE   20   backbone
+365    PHE   20   name CA
+366    VAL   16   not name H*
+366    VAL   16   backbone
+366    VAL   16   name CA
+367    GLU   15   not name H*
+367    GLU   15   backbone
+367    GLU   15   name CA
+368    LEU   19   not name H*
+368    LEU   19   backbone
+368    LEU   19   name CA
+369    MET   17   not name H*
+369    MET   17   backbone
+369    MET   17   name CA
+370    ARG   24   not name H*
+370    ARG   24   backbone
+370    ARG   24   name CA
+371    ARG   24   not name H*
+371    ARG   24   backbone
+371    ARG   24   name CA
+372    GLY    7   not name H*
+372    GLY    7   backbone
+372    GLY    7   name CA
+373    ASP   12   not name H*
+373    ASP   12   backbone
+373    ASP   12   name CA
+374    LEU   19   not name H*
+374    LEU   19   backbone
+374    LEU   19   name CA
+375    PRO   14   not name H*
+375    PRO   14   backbone
+375    PRO   14   name CA
+376    VAL   16   not name H*
+376    VAL   16   backbone
+376    VAL   16   name CA
+377    TRP   24   not name H*
+377    TRP   24   backbone
+377    TRP   24   name CA
+378    LEU   19   not name H*
+378    LEU   19   backbone
+378    LEU   19   name CA
+379    SER   11   not name H*
+379    SER   11   backbone
+379    SER   11   name CA
+380    TYR   21   not name H*
+380    TYR   21   backbone
+380    TYR   21   name CA
+381    LYS   22   not name H*
+381    LYS   22   backbone
+381    LYS   22   name CA
+382    VAL   16   not name H*
+382    VAL   16   backbone
+382    VAL   16   name CA
+383    ALA   10   not name H*
+383    ALA   10   backbone
+383    ALA   10   name CA
+384    SER   11   not name H*
+384    SER   11   backbone
+384    SER   11   name CA
+385    ALA   10   not name H*
+385    ALA   10   backbone
+385    ALA   10   name CA
+386    GLY    7   not name H*
+386    GLY    7   backbone
+386    GLY    7   name CA
+387    ILE   19   not name H*
+387    ILE   19   backbone
+387    ILE   19   name CA
+388    SER   11   not name H*
+388    SER   11   backbone
+388    SER   11   name CA
+389    TYR   21   not name H*
+389    TYR   21   backbone
+389    TYR   21   name CA
+390    LYS   22   not name H*
+390    LYS   22   backbone
+390    LYS   22   name CA
+391    ASP   12   not name H*
+391    ASP   12   backbone
+391    ASP   12   name CA
+392    ARG   24   not name H*
+392    ARG   24   backbone
+392    ARG   24   name CA
+393    GLU   15   not name H*
+393    GLU   15   backbone
+393    GLU   15   name CA
+394    TRP   24   not name H*
+394    TRP   24   backbone
+394    TRP   24   name CA
+395    CYS   11   not name H*
+395    CYS   11   backbone
+395    CYS   11   name CA
+396    PHE   20   not name H*
+396    PHE   20   backbone
+396    PHE   20   name CA
+397    THR   14   not name H*
+397    THR   14   backbone
+397    THR   14   name CA
+398    GLY    7   not name H*
+398    GLY    7   backbone
+398    GLY    7   name CA
+399    GLU   15   not name H*
+399    GLU   15   backbone
+399    GLU   15   name CA
+400    ARG   24   not name H*
+400    ARG   24   backbone
+400    ARG   24   name CA
+401    ASN   14   not name H*
+401    ASN   14   backbone
+401    ASN   14   name CA
+402    ASN   14   not name H*
+402    ASN   14   backbone
+402    ASN   14   name CA
+403    GLN   17   not name H*
+403    GLN   17   backbone
+403    GLN   17   name CA
+404    ILE   19   not name H*
+404    ILE   19   backbone
+404    ILE   19   name CA
+405    LEU   19   not name H*
+405    LEU   19   backbone
+405    LEU   19   name CA
+406    GLU   15   not name H*
+406    GLU   15   backbone
+406    GLU   15   name CA
+407    GLU   15   not name H*
+407    GLU   15   backbone
+407    GLU   15   name CA
+408    ASN   14   not name H*
+408    ASN   14   backbone
+408    ASN   14   name CA
+409    MET   17   not name H*
+409    MET   17   backbone
+409    MET   17   name CA
+410    GLU   15   not name H*
+410    GLU   15   backbone
+410    GLU   15   name CA
+411    VAL   16   not name H*
+411    VAL   16   backbone
+411    VAL   16   name CA
+412    GLU   15   not name H*
+412    GLU   15   backbone
+412    GLU   15   name CA
+413    ILE   19   not name H*
+413    ILE   19   backbone
+413    ILE   19   name CA
+414    TRP   24   not name H*
+414    TRP   24   backbone
+414    TRP   24   name CA
+415    THR   14   not name H*
+415    THR   14   backbone
+415    THR   14   name CA
+416    ARG   24   not name H*
+416    ARG   24   backbone
+416    ARG   24   name CA
+417    GLU   15   not name H*
+417    GLU   15   backbone
+417    GLU   15   name CA
+418    GLY    7   not name H*
+418    GLY    7   backbone
+418    GLY    7   name CA
+419    GLU   15   not name H*
+419    GLU   15   backbone
+419    GLU   15   name CA
+420    LYS   22   not name H*
+420    LYS   22   backbone
+420    LYS   22   name CA
+421    LYS   22   not name H*
+421    LYS   22   backbone
+421    LYS   22   name CA
+422    LYS   22   not name H*
+422    LYS   22   backbone
+422    LYS   22   name CA
+423    LEU   19   not name H*
+423    LEU   19   backbone
+423    LEU   19   name CA
+424    ARG   24   not name H*
+424    ARG   24   backbone
+424    ARG   24   name CA
+425    PRO   14   not name H*
+425    PRO   14   backbone
+425    PRO   14   name CA
+426    LYS   22   not name H*
+426    LYS   22   backbone
+426    LYS   22   name CA
+427    TRP   24   not name H*
+427    TRP   24   backbone
+427    TRP   24   name CA
+428    LEU   19   not name H*
+428    LEU   19   backbone
+428    LEU   19   name CA
+429    ASP   12   not name H*
+429    ASP   12   backbone
+429    ASP   12   name CA
+430    ALA   10   not name H*
+430    ALA   10   backbone
+430    ALA   10   name CA
+431    ARG   24   not name H*
+431    ARG   24   backbone
+431    ARG   24   name CA
+432    VAL   16   not name H*
+432    VAL   16   backbone
+432    VAL   16   name CA
+433    TYR   21   not name H*
+433    TYR   21   backbone
+433    TYR   21   name CA
+434    ALA   10   not name H*
+434    ALA   10   backbone
+434    ALA   10   name CA
+435    ASP   12   not name H*
+435    ASP   12   backbone
+435    ASP   12   name CA
+436    PRO   14   not name H*
+436    PRO   14   backbone
+436    PRO   14   name CA
+437    MET   17   not name H*
+437    MET   17   backbone
+437    MET   17   name CA
+438    ALA   10   not name H*
+438    ALA   10   backbone
+438    ALA   10   name CA
+439    LEU   19   not name H*
+439    LEU   19   backbone
+439    LEU   19   name CA
+440    LYS   22   not name H*
+440    LYS   22   backbone
+440    LYS   22   name CA
+441    ASP   12   not name H*
+441    ASP   12   backbone
+441    ASP   12   name CA
+442    PHE   20   not name H*
+442    PHE   20   backbone
+442    PHE   20   name CA
+443    LYS   22   not name H*
+443    LYS   22   backbone
+443    LYS   22   name CA
+444    GLU   15   not name H*
+444    GLU   15   backbone
+444    GLU   15   name CA
+445    PHE   20   not name H*
+445    PHE   20   backbone
+445    PHE   20   name CA
+446    ALA   10   not name H*
+446    ALA   10   backbone
+446    ALA   10   name CA
+447    SER   11   not name H*
+447    SER   11   backbone
+447    SER   11   name CA
+448    GLY    7   not name H*
+448    GLY    7   backbone
+448    GLY    7   name CA
+449    ARG   24   not name H*
+449    ARG   24   backbone
+449    ARG   24   name CA
+450    LYS   23   not name H*
+450    LYS   23   backbone
+450    LYS   23   name CA
+451     A5   31   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+451     A5   31   name HO5' O5' or name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+452      G   34   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+452      G   34   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+452      G   34   Phosphate
+453      A   33   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+453      A   33   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+453      A   33   Phosphate
+454      C   31   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+454      C   31   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+454      C   31   Phosphate
+455      U   30   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+455      U   30   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+455      U   30   Phosphate
+456      A   33   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+456      A   33   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+456      A   33   Phosphate
+457     A3   34   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+457     A3   34   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2' O3' HO3' 
+457     A3   34   Phosphate
+458    atp   43   name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3
+458    atp   43   name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2' C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'
+458    atp   43   name O5* O2A O1A PA O3A
+458    atp   43   name PB O1B O2B O3B
+458    atp   43   name PG O1G O2G O3G
+459     MG    1   MG
