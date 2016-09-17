@@ -20,8 +20,17 @@ flush = sys.stdout.flush
 # ----------------------------------------
 # VARIABLE DECLARATION
 
+sugar = "name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2'" + " C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'"		# DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...
+sugar_5= "name HO5' O5' or " + sugar
+sugar_3= sugar + " O3' HO3' "
+base = 'name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3'	# selection string that will select all appropriate atoms for any of the nucleic residues...
+a_phos = 'name O5* O2A O1A PA O3A'
+b_phos = 'name PB O1B O2B O3B'
+g_phos = 'name PG O1G O2G O3G'
+inorg_phos = 'name P O1 H1 O2 H2 O3 O4'
+
 config_file = sys.argv[1]	# Local or Global positon of the config file that holds all the values for the parameters
-necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###...
+necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###
 all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','protein_selection','write_summary']
 nSel = len(sel)
 
@@ -58,6 +67,7 @@ def summary():
 # CREATING PARAMETER DICTIONARY
 config_parser(config_file)
 
+# ----------------------------------------
 # LOAD IN REFERENCE STRUCTURE
 ffprint('Beginning to prep the avg and u universes')
 avg = MDAnalysis.Universe(parameters['avg_pdb'])
@@ -67,25 +77,8 @@ avg_important.translate(-avg_align.center_of_mass())	# translate the important s
 pos0 = avg_align.positions		# gather the average position
 nRes = avg_important.n_residues
 
-nAtoms = ['']*nRes
-avg_pos = ['']*nRes 
-res_out = open('%s.residues_list.dat' %(parameters['system']),'w')
-for i in range(nRes):
-	temp_list = []
-	pos_list = []
-	temp_res = avg_important.residues[i]
-	res_out.write('%s   %d   %d\n' %(temp_res.resname, temp_res.resid, temp_res.resid+167)) ### This offset value is very specific to Dengue NS3... need to make a general parameter to be read in...
-	for j in range(nSel):
-		pos_list.append(temp_res.select_atoms('%s' %(sel[j][1])).positions)
-		temp_list.append(temp_res.select_atoms('%s' %(sel[j][1])).n_atoms)
-	
-	avg_pos[i] = pos_list
-	nAtoms[i] = temp_list
-
-res_out.close()
-
-ffprint('Initialized and filled array with average residue coords. Also, created list of atoms to be analyzed for RMSF')	### NEED TO REWORD THIS OUTPUT...
-# LOAD IN PDB OF SYSTEM OF INTEREST
+# ----------------------------------------
+# INITIALIZING THE ANALYSIS UNIVERSE; CREATING THE NECESSARY ATOM SELECTIONS FOR ALIGNMENT AND SUBSEQUENT SELECTION CREATION
 u = MDAnalysis.Universe(parameters['pdb_file'])
 u_align = u.select_atoms(parameters['alignment'])
 u_important = u.select_atoms(parameters['important'])
@@ -96,6 +89,11 @@ if not parameters['Wrapped']:
 if nRes != u_important.n_residues:
 	ffprint('Number of residues in the average structure: %d, Number of residues in the trajectory: %d. These need to match...' %(nRes,u_important.n_residues))
 	sys.exit()
+
+pro = u.select_atoms('protein')
+nucleic = u.select_atoms('nucleic or resname A5 A3 U5 U3 G5 G3 C5 C3')
+triphos = u.select_atoms('resname atp adp PHX')
+other = u.select_atoms('resname MG')
 
 # ----------------------------------------
 # CREATING THE ATOM SELECTIONS FOR ANALYSIS
@@ -111,6 +109,7 @@ with open('%s' %(parameters['selection_file']),'w') as f:
 			nAtoms.append(temp_sel.n_atoms)
 			avg_pos.append(avg_important.residues[i].select_atoms(parameters['protein_selection']).positions)
 			f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,parameters['protein_selection']))
+
 		elif temp_resname in nucleic.resnames:
 			temp_sel = u_important.residues[i].select_atoms(base)
 			selection_list.append(temp_sel)
@@ -139,19 +138,23 @@ with open('%s' %(parameters['selection_file']),'w') as f:
 				avg_pos.append(avg_important.residues[i].select_atoms(sugar).positions)
 				f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,sugar))
 
+		elif temp_resname in other.resnames:
+			selection_list.append(u_important.residues[i])
+			nAtoms.append(u_important.residues[i].n_atoms)
+			avg_pos.append(avg_important.residues[i].positions)
+			f.write('%03d    %3s   %2d   all\n' %(i,temp_resname,temp_sel.n_atoms))
 
-
-
-
-
-
-dist2 = zeros((nRes,nSel))
+ffprint('Done creating all the important atom selections, saving the number of atoms in the selection, and saving the average positions of the selections')
+nSel = len(selection_list)
+# ----------------------------------------
+# MSD ANALYSIS OF THE ATOM SELECTIONS; SUMMING MSD VALUES OVER ALL TIMESTEPS;
+dist2 = zeros(nSel)
 ffprint('Beginning trajectory analysis')
 nSteps = 0
 start = parameters['start']
 while start <= parameters['end']:
 	ffprint('Loading/Analyzing trajectory %s' %(start))
-	u.load_new('%s/production.%s/production.%s.dcd' %(parameters['traj_loc'],start,start))
+	u.load_new('%s/production.%s/production.%s.dcd' %(parameters['traj_loc'],start,start))		### I STILL WOULD LIKE TO MAKE THIS LINE MORE GENERAL
 	nSteps += len(u.trajectory)
 	for ts in u.trajectory:
 		u_important.translate(-u_align.center_of_mass())
@@ -168,12 +171,9 @@ while start <= parameters['end']:
 
 		R, d = rotation_matrix(u_align.positions,pos0)
 		u_important.rotate(R)
-		
-		for i in range(nRes):
-			temp_res = u_important.residues[i]
-			for j in range(nSel):
-				temp_pos = temp_res.select_atoms('%s' %(sel[j][1])).positions
-				dist2[i][j] += MSD(temp_pos,avg_pos[i][j],nAtoms[i][j])
+	
+		for i in range(nSel):
+			dist2[i] += MSD(selection_list[i].positions,avg_pos[i],nAtoms[i])
 		
 		if ts.frame%1000 == 0:
 			ffprint('Finished analyzing frame %d in trajectory %d.' %(ts.frame, start))
@@ -183,6 +183,8 @@ while start <= parameters['end']:
 ffprint('Finished trajectory analysis.')
 dist2 /= nSteps
 dist2 = sqrt(dist2)
+
+# ----------------------------------------
 # WRITING RMSF RESULTS OUT TO FILE
 with open('%s.dat' %(parameters['rmsf_filename']),'w') as f:
 	np.savetxt(f,dist2)
