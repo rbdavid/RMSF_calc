@@ -22,7 +22,7 @@ flush = sys.stdout.flush
 
 config_file = sys.argv[1]	# Local or Global positon of the config file that holds all the values for the parameters
 necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###...
-all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','write_summary']
+all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','protein_selection','write_summary']
 nSel = len(sel)
 
 # ----------------------------------------
@@ -41,6 +41,7 @@ def config_parser(config_file):	# Function to take config file and create/fill t
 	parameters['alignment'] = 'protein'
 	parameters['important'] = 'protein'
 	parameters['substrate'] = 'protein'
+	parameters['protein_selection'] = 'not name H*'
 	parameters['write_summary'] = False 
 
 	# GRABBING PARAMETER VALUES FROM THE CONFIG FILE:
@@ -84,7 +85,6 @@ for i in range(nRes):
 res_out.close()
 
 ffprint('Initialized and filled array with average residue coords. Also, created list of atoms to be analyzed for RMSF')	### NEED TO REWORD THIS OUTPUT...
-
 # LOAD IN PDB OF SYSTEM OF INTEREST
 u = MDAnalysis.Universe(parameters['pdb_file'])
 u_align = u.select_atoms(parameters['alignment'])
@@ -96,6 +96,54 @@ if not parameters['Wrapped']:
 if nRes != u_important.n_residues:
 	ffprint('Number of residues in the average structure: %d, Number of residues in the trajectory: %d. These need to match...' %(nRes,u_important.n_residues))
 	sys.exit()
+
+# ----------------------------------------
+# CREATING THE ATOM SELECTIONS FOR ANALYSIS
+selection_list = []
+nAtoms = []
+avg_pos = []
+with open('%s' %(parameters['selection_file']),'w') as f:
+	for i in range(nRes):
+		temp_resname = u_important.residues[i].resname
+		if temp_resname in pro.resnames:
+			temp_sel = u_important.residues[i].select_atoms(parameters['protein_selection'])
+			selection_list.append(temp_sel)
+			nAtoms.append(temp_sel.n_atoms)
+			avg_pos.append(avg_important.residues[i].select_atoms(parameters['protein_selection']).positions)
+			f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,parameters['protein_selection']))
+		elif temp_resname in nucleic.resnames:
+			temp_sel = u_important.residues[i].select_atoms(base)
+			selection_list.append(temp_sel)
+			nAtoms.append(temp_sel.n_atoms)
+			avg_pos.append(avg_important.residues[i].select_atoms(base).positions)
+			f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,base))
+			if temp_resname in ['A5','U5','C5','G5']:
+				temp_sel = u_important.residues[i].select_atoms(sugar_5)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(sugar_5).positions)
+				f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,sugar_5))
+				continue
+
+			elif temp_resname in ['A3','U3','C3','G3']:
+				temp_sel = u_important.residues[i].select_atoms(sugar_3)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(sugar_3).positions)
+				f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,sugar_3))
+
+			else:
+				temp_sel = u_important.residues[i].select_atoms(sugar)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(sugar).positions)
+				f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,sugar))
+
+
+
+
+
+
 
 dist2 = zeros((nRes,nSel))
 ffprint('Beginning trajectory analysis')
