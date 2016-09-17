@@ -40,7 +40,6 @@ def ffprint(string):		# Useful function to use when on a computer that has a lar
 	flush()
 
 def config_parser(config_file):	# Function to take config file and create/fill the parameter dictionary 
-	parameters = {}
 	for i in range(len(necessary_parameters)):
 		parameters[necessary_parameters[i]] = ''
 
@@ -54,7 +53,7 @@ def config_parser(config_file):	# Function to take config file and create/fill t
 
 	# GRABBING PARAMETER VALUES FROM THE CONFIG FILE:
 	execfile(config_file,parameters)
-	for key, value in parameters.iteritems:
+	for key, value in parameters.iteritems():
 		if value == '':
 			print '%s has not been assigned a value. This variable is necessary for the script to run. Please declare this variable within the config file.'
 			sys.exit()
@@ -72,6 +71,7 @@ def summary():
 # ----------------------------------------
 # MAIN PROGRAM:
 # CREATING PARAMETER DICTIONARY
+parameters = {}
 config_parser(config_file)
 
 # ----------------------------------------
@@ -86,7 +86,7 @@ nRes = avg_important.n_residues
 
 # ----------------------------------------
 # INITIALIZING THE ANALYSIS UNIVERSE; CREATING THE NECESSARY ATOM SELECTIONS FOR ALIGNMENT AND SUBSEQUENT SELECTION CREATION
-u = MDAnalysis.Universe(parameters['pdb_file'])
+u = MDAnalysis.Universe('%s' %(parameters['pdb_file']))
 u_align = u.select_atoms(parameters['alignment'])
 u_important = u.select_atoms(parameters['important'])
 if not parameters['Wrapped']:
