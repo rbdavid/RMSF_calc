@@ -58,12 +58,12 @@ def config_parser(config_file):	# Function to take config file and create/fill t
 			print '%s has not been assigned a value. This variable is necessary for the script to run. Please declare this variable within the config file.'
 			sys.exit()
 def summary():
-	with open('%s.summary' %(parameters['summary_file']),'w') as f:
+	with open('%s.summary' %(parameters['summary_filename']),'w') as f:
 		f.write('Using MDAnalysis version: %s\n' %(MDAnalysis.version.__version__))
 		f.write('To recreate this analysis, run this line:\n')
 		for i in range(len(sys.argv)):
 			f.write('%s ' %(sys.argv[i]))
-		f.write('\nParameters used:\n')
+		f.write('\n\nParameters used:\n')
 		for i in all_parameters:
 			f.write('%s = %s \n' %(i, parameters[i]))
 		f.write('\n\n')
@@ -148,7 +148,8 @@ with open('%s' %(parameters['selection_file']),'w') as f:
 			temp_sel = u_important.select_atoms("resid %s and name P OP1 OP2 O5' or bynum %s" %(u_important.residues[i].resid,u_important.residues[i-1][-1].index+1))
 			selection_list.append(temp_sel)
 			nAtoms.append(temp_sel.n_atoms)
-			avg_pos.append(avg_important.select_atoms("resid %s and name P OP1 OP2 O5' or bynum %s" %(u_important.residues[i].resid,u_important.residues[i-1][-1].index+1).positions)
+			avg_pos.append(avg_important.select_atoms("resid %s and name P OP1 OP2 O5' or bynum %s" %(avg_important.residues[i].resid,avg_important.residues[i-1][-1].index+1)).positions)
+			f.write('%03d    %3s   %2d   phosphate\n' %(i,temp_resname,temp_sel.n_atoms))
 
 		elif temp_resname in other.resnames:
 			selection_list.append(u_important.residues[i])
