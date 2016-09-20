@@ -43,21 +43,33 @@ def MSD(x,y,n):
 
 	return sums(square(x-y))/n
 
-def wrapping(x,dim):
+def wrapping(x,dim,dim2):
 	""" Calculates the translation matrix needed to wrap a particle back into the original periodic box
 	
-	Usage: t = wrapping(x,dim)
+	Usage: t = wrapping(x,dim,dim2)
 
 	Arguments:
 	x: a numpy array of size (3) that corresponds to the xyz coordinates of an ATOM/COM/COG of a residue
 	dim: a numpy array of size (3) that holds the xyz dimensions of the periodic box at that timestep
+	dim2: a numpy array of size (3) that holds the xyz dimensions of the periodic box divided by 2 at that timestep
 
 	"""
 	
 	t = zeros(3)
-	dim2 = dim/2.
 	for i in range(3):
 		if (x[i]<-dim2[i]) or (x[i]>dim2[i]):
 			t[i] = -dim[i]*round(x[i]/dim[i])
 	return t
+
+def euclid_dist(x,y):
+	""" Calculates the Euclidian Distance between two arrays of the same size
+	Usage: dist,dist2 = euclid_dist(x,y)
+		
+	Arguments:
+	x, y: numpy arrays with the same size
+	"""
+	
+	dist2 = sums(square(x-y))
+	dist = sqrt(dist2)
+	return dist, dist2
 
