@@ -151,6 +151,59 @@ with open('%s' %(parameters['selection_file']),'w') as f:
 			avg_pos.append(avg_important.select_atoms("resid %s and name P OP1 OP2 O5' or bynum %s" %(avg_important.residues[i].resid,avg_important.residues[i-1][-1].index+1)).positions)
 			f.write('%03d    %3s   %2d   phosphate\n' %(i,temp_resname,temp_sel.n_atoms))
 
+		elif temp_resname in triphos.resnames:
+			if temp_resname in ['atp','adp']:
+				temp_sel = u_important.residues[i].select_atoms(base)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(base).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,base))
+				
+				temp_sel = u_important.residues[i].select_atoms(sugar)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(sugar).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,sugar))
+			
+			if temp_resname == 'atp':
+				temp_sel = u_important.residues[i].select_atoms(a_phos)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(a_phos).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,a_phos))
+				
+				temp_sel = u_important.residues[i].select_atoms(b_phos)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(b_phos).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,b_phos))
+				
+				temp_sel = u_important.residues[i].select_atoms(g_phos)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(g_phos).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,g_phos))
+				
+			elif temp_resname == 'adp':
+				temp_sel = u_important.residues[i].select_atoms(a_phos)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(a_phos).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,a_phos))
+				
+				temp_sel = u_important.residues[i].select_atoms(b_phos)
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].select_atoms(b_phos).positions)
+				f.write('%03d   %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,b_phos))
+				
+			elif temp_resname == 'PHX':
+				temp_sel = u_important.residues[i]
+				selection_list.append(temp_sel)
+				nAtoms.append(temp_sel.n_atoms)
+				avg_pos.append(avg_important.residues[i].positions)
+				f.write('%03d   %3s   %2d   all\n' %(i,temp_resname,temp_sel.n_atoms))
+
 		elif temp_resname in other.resnames:
 			selection_list.append(u_important.residues[i])
 			nAtoms.append(u_important.residues[i].n_atoms)
