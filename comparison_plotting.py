@@ -89,6 +89,6 @@ if nOther_res != 0:
 
 change_dir('021.150.RMSF')
 data = np.loadtxt('021.150.%s.rmsf.dat' %(system))
-plot_1d(res_list[:],data[pro_index[0]:pro_index[-1]+1],'k','Protein Residue Number','RMSF','021.150.%s'%(i,j,system),'pro_rmsf',yunits='$\AA$',x_lim=(res_list[0],res_list[-1]),y_lim=(0,7),plt_title='RMSF of Protein Residues (Traj 021 - 150)' %(i,j))
-plot_1d(range(nOther_res),data[other_index[0]:],'k','Substrate Residue Selections','RMSF', '021.150.%s'%(i,j,system),'sub_rmsf',yunits='$\AA$',x_lim=(0,nOther_res-1),y_lim=(0,4),plt_title='RMSF of Substrate Residue Selections (Traj 021 - 150)' %(i,j))
+plot_1d(res_list[:],data[pro_index[0]:pro_index[-1]+1],'k','Protein Residue Number','RMSF','021.150.%s'%(system),'pro_rmsf',yunits='$\AA$',x_lim=(res_list[0],res_list[-1]),y_lim=(0,7),plt_title='RMSF of Protein Residues (Traj 021 - 150)')
+plot_1d(range(nOther_res),data[other_index[0]:],'k','Substrate Residue Selections','RMSF', '021.150.%s'%(system),'sub_rmsf',yunits='$\AA$',x_lim=(0,nOther_res-1),y_lim=(0,4),plt_title='RMSF of Substrate Residue Selections (Traj 021 - 150)')
 
