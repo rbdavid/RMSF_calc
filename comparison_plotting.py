@@ -73,7 +73,7 @@ plt.xlabel('Protein Residue Number')
 plt.ylabel('RMSF ($\AA$)')
 plt.ylim((0,7))
 plt.xlim((res_list[0],res_list[-1]))
-plt.savefig('protein_rmsf_all_windows.png')
+plt.savefig('protein_rmsf_all_windows.png',dpi=300)
 plt.close()
 
 if nOther_res != 0:
@@ -84,6 +84,6 @@ if nOther_res != 0:
 	plt.xlim((0,nOther_res-1))
 	plt.ylim((0,4.0))
 	plt.title('Window Comparison of Substrate Residue RMSF',size=14)
-	plt.savefig('substrate_rmsf_all_windows.png')
+	plt.savefig('substrate_rmsf_all_windows.png',dpi=300)
 	plt.close()
 
