@@ -23,14 +23,19 @@ config_file = sys.argv[1]	# Local or Global positon of the config file that hold
 necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###
 all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','protein_selection','write_summary','summary_filename']
 
-sugar = "name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2'" + " C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'"		# DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...; the atoms with * are found in triphosphates;
-sugar_5= sugar + " HO5' O5'"
-sugar_3= sugar + " O3' HO3' "
-base = 'name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3'	# selection string that will select all appropriate atoms for any of the nucleic residues...
+sugar = "name C5' C4' O4' C1' C3' C2' O2' " + " C5* C4* O4* C1* C3* O3* C2* O2* "		# NO HYDROGENS; DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...; the atoms with * are found in triphosphates;
+#sugar = "name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2'" + " C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'"		# DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...; the atoms with * are found in triphosphates;
+sugar_5= sugar + " O5'"		# NO HYDROGENS
+#sugar_5= sugar + " HO5' O5'"
+sugar_3= sugar + " O3' "	# NO HYDROGENS
+#sugar_3= sugar + " O3' HO3' "
+base = 'name N9 C8 N7 C5 C6 N6 N1 C2 N3 C4 O6 N4 C2 O2 O4'	# NO HYDROGENS; selection string that will select all appropriate atoms for any of the nucleic residues...
+#base = 'name N9 C8 H8 H80 N7 C5 C6 N6 H60 H61 H62 N1 C2 H2 N3 C4 O6 H1 H21 H22 H6 H5 N4 H41 H42 C2 O2 O4 H3'	# selection string that will select all appropriate atoms for any of the nucleic residues...
 a_phos = 'name O5* O2A O1A PA O3A'
 b_phos = 'name PB O1B O2B O3B'
 g_phos = 'name PG O1G O2G O3G'
-inorg_phos = 'name P O1 H1 O2 H2 O3 O4'
+inorg_phos = 'name P O1 O2 O3 O4'	# NO HYDROGENS
+#inorg_phos = 'name P O1 H1 O2 H2 O3 O4'
 
 # ----------------------------------------
 # SUBROUTINES:
