@@ -35,7 +35,7 @@ def make_colormap(seq):
 			cdict['blue'].append([item, b1, b2])
 	return mcolors.LinearSegmentedColormap('CustomMap', cdict)
 
-def plot_1d(xdata, ydata, color, x_axis, y_axis, system, analysis, average = False, t0 = 0, **kwargs):
+def plot_1d(xdata, ydata, color, x_axis, y_axis, system, analysis, average = False, t0 = 0, marker_style = None, **kwargs):
 	""" Creates a 1D scatter/line plot:
 
 	Usage: plot_1d(xdata, ydata, color, x_axis, y_axis, system, analysis, average = [False|True], t0 = 0)
@@ -48,6 +48,7 @@ def plot_1d(xdata, ydata, color, x_axis, y_axis, system, analysis, average = Fal
 	analysis: descriptor for the analysis that produced the data
 	average: [False|True]; Default is False; if set to True, the function will calc the average, standard dev, and standard dev of mean of the y-data	# THERE IS A BUG IF average=True; must read in yunits for this function to work at the moment.
 	t0: index to begin averaging from; Default is 0
+	marker_style: default None; string that matches the desired marker style 
 	
 	kwargs:
 		xunits, yunits: string with correct math text describing the units for the x/y data
@@ -57,7 +58,7 @@ def plot_1d(xdata, ydata, color, x_axis, y_axis, system, analysis, average = Fal
 
 	"""
 	# INITIATING THE PLOT...
-	plt.plot(xdata, ydata, '%s' %(color))
+	plt.plot(xdata, ydata, '%s' %(color),marker=marker_style)
 
 	# READING IN KWARG DICTIONARY INTO SPECIFIC VARIABLES
 	for name, value in kwargs.items():
