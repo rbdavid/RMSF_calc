@@ -90,14 +90,14 @@ for i in range(start,end,step):
 		plt.plot(range(nRNA_res),temp_data[rna_min_index:rna_max_index])
 
 		plt.figure(4)
-		plot_1d(range(nRNA_res),temp_data[rna_min_index:rna_max_index],'k','RNA Residue Selections','RMSF','%03d.%03d.%s'%(i,j,system),'rna_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nRNA_res-1),y_lim=(0,7),plt_title='RMSF of RNA Residue Selections (Traj %03d - %03d)' %(i,j))
+		plot_1d(range(nRNA_res),temp_data[rna_min_index:rna_max_index],'k','RNA Residue Selections','RMSF','%03d.%03d.%s'%(i,j,system),'rna_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nRNA_res-1),y_lim=(0,4),plt_title='RMSF of RNA Residue Selections (Traj %03d - %03d)' %(i,j))
 
 	if bool_other:
 		plt.figure(5)
 		plt.plot(range(nOther_res),temp_data[other_min_index:other_max_index])
 		
 		plt.figure(6)
-		plot_1d(range(nOther_res),temp_data[other_min_index:other_max_index],'k','ATP Binding Substrate Selections','RMSF','%03d.%03d.%s'%(i,j,system),'atp_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nOther_res-1),y_lim=(0,7),plt_title='RMSF of ATP Binding Pocket Substrate Selections (Traj %03d - %03d)' %(i,j))
+		plot_1d(range(nOther_res),temp_data[other_min_index:other_max_index],'k','ATP Binding Substrate Selections','RMSF','%03d.%03d.%s'%(i,j,system),'atp_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nOther_res-1),y_lim=(0,4),plt_title='RMSF of ATP Binding Pocket Substrate Selections (Traj %03d - %03d)' %(i,j))
 
 	window_count += 1
 	change_dir('..')
@@ -106,8 +106,9 @@ plt.figure(1)
 plt.grid(b=True, which='major', axis='both', color='#808080', linestyle='--')
 plt.xlabel('Protein Residue Number')
 plt.ylabel('RMSF ($\AA$)')
-plt.ylim((0,7))
+plt.ylim((0,4))
 plt.xlim((pro_res_list[0],pro_res_list[-1]))
+plt.title('Window Comparison of Protein Residue RMSF - %s'%(system),size=14)
 plt.savefig('%03d.%03d.%s.protein_rmsf_all_windows.png'%(start,end,system),dpi=300)
 plt.close()
 
@@ -117,8 +118,8 @@ if bool_RNA:
 	plt.xlabel('RNA Residue Selections',size=14)
 	plt.ylabel('RMSF ($\AA$)',size=14)
 	plt.xlim((0,nRNA_res-1))
-	plt.ylim((0,7.0))
-	plt.title('Window Comparison of RNA Residue RMSF',size=14)
+	plt.ylim((0,4))
+	plt.title('Window Comparison of RNA Residue RMSF - %s'%(system),size=14)
 	plt.savefig('%03d.%03d.%s.rna_rmsf_all_windows.png'%(start,end,system),dpi=300)
 	plt.close()
 
@@ -128,8 +129,8 @@ if bool_other:
 	plt.xlabel('ATP Substrate Residue Selections',size=14)
 	plt.ylabel('RMSF ($\AA$)',size=14)
 	plt.xlim((0,nOther_res-1))
-	plt.ylim((0,7.0))
-	plt.title('Window Comparison of ATP Substrate Residue RMSF',size=14)
+	plt.ylim((0,4))
+	plt.title('Window Comparison of ATP Substrate Residue RMSF- %s'%(system),size=14)
 	plt.savefig('%03d.%03d.%s.atp_sub_rmsf_all_windows.png'%(start,end,system),dpi=300)
 	plt.close()
 
@@ -141,8 +142,9 @@ plt.errorbar(pro_res_list[:],avg_data[pro_index[0]:pro_index[-1]+1],yerr=std_dat
 plt.grid(b=True, which='major', axis='both', color='#808080', linestyle='--')
 plt.xlabel('Protein Residue Number')
 plt.ylabel('RMSF ($\AA$)')
-plt.ylim((0,7))
+plt.ylim((0,4))
 plt.xlim((pro_res_list[0],pro_res_list[-1]))
+plt.title('Avg w/ St Dev eror bars of Window RMSF of Protein Residues - %s'%(system))
 plt.savefig('%03d.%03d.%s.protein_rmsf_avg_errorbars.png'%(start,end,system),dpi=300)
 plt.close()
 
@@ -151,8 +153,9 @@ if bool_RNA:
 	plt.grid(b=True, which='major', axis='both', color='#808080', linestyle='--')
 	plt.xlabel('RNA Residue Selections')
 	plt.ylabel('RMSF ($\AA$)')
-	plt.ylim((0,7))
+	plt.ylim((0,4))
 	plt.xlim((0,nRNA_res-1))
+	plt.title('Avg w/ St Dev eror bars of Window RMSF of RNA Selections - %s'%(system))
 	plt.savefig('%03d.%03d.%s.rna_rmsf_avg_errorbars.png'%(start,end,system),dpi=300)
 	plt.close()
 
@@ -161,8 +164,9 @@ if bool_other:
 	plt.grid(b=True, which='major', axis='both', color='#808080', linestyle='--')
 	plt.xlabel('ATP Substrate Residue Selections')
 	plt.ylabel('RMSF ($\AA$)')
-	plt.ylim((0,7))
+	plt.ylim((0,4))
 	plt.xlim((0,nOther_res-1))
+	plt.title('Avg w/ St Dev eror bars of Window RMSF of ATP Substrates - %s'%(system))
 	plt.savefig('%03d.%03d.%s.atp_sub_rmsf_avg_errorbars.png'%(start,end,system),dpi=300)
 	plt.close()
 
@@ -171,7 +175,7 @@ data = np.loadtxt('021.150.%s.rmsf.dat' %(system))
 plot_1d(pro_res_list[:],data[pro_index[0]:pro_index[-1]+1],'k','Protein Residue Number','RMSF','021.150.%s'%(system),'pro_rmsf',yunits='$\AA$',x_lim=(pro_res_list[0],pro_res_list[-1]),y_lim=(0,7),plt_title='RMSF of Protein Residues (Traj 021 - 150)')
 
 if nRNA_res != 0:
-	plot_1d(range(nRNA_res),data[rna_min_index:rna_max_index],'k','RNA Residue Selections','RMSF', '021.150.%s'%(system),'rna_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nRNA_res-1),y_lim=(0,7),plt_title='RMSF of RNA Residue Selections (Traj 021 - 150)')
+	plot_1d(range(nRNA_res),data[rna_min_index:rna_max_index],'k','RNA Residue Selections','RMSF', '021.150.%s'%(system),'rna_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nRNA_res-1),y_lim=(0,4),plt_title='RMSF of RNA Residue Selections (Traj 021 - 150)')
 
 if nOther_res != 0:
 	plot_1d(range(nOther_res),data[other_min_index:other_max_index],'k','ATP Substrate Selections','RMSF', '021.150.%s'%(system),'sub_rmsf',marker_style='.',yunits='$\AA$',x_lim=(0,nOther_res-1),y_lim=(0,4),plt_title='RMSF of ATP Substrate Selections (Traj 021 - 150)')
