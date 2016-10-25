@@ -150,10 +150,10 @@ with open('%s' %(parameters['selection_file']),'w') as f:
 				avg_pos.append(avg_important.residues[i].select_atoms(sugar).positions)
 				f.write('%03d    %3s   %2d   %s\n' %(i,temp_resname,temp_sel.n_atoms,sugar))
 
-			temp_sel = u_important.select_atoms("resid %s and name P OP1 OP2 O5' or bynum %s" %(u_important.residues[i].resid,u_important.residues[i-1][-1].index+1))
+			temp_sel = u_important.select_atoms("(resid %s and name P OP1 OP2 O5') or (resid %s and name O3')" %(u_important.residues[i].resid,u_important.residues[i-1].resid))
 			selection_list.append(temp_sel)
 			nAtoms.append(temp_sel.n_atoms)
-			avg_pos.append(avg_important.select_atoms("resid %s and name P OP1 OP2 O5' or bynum %s" %(avg_important.residues[i].resid,avg_important.residues[i-1][-1].index+1)).positions)
+			avg_pos.append(avg_important.select_atoms("(resid %s and name P OP1 OP2 O5') or (resid %s and name O3')" %(avg_important.residues[i].resid,avg_important.residues[i-1].resid)).positions)
 			f.write('%03d    %3s   %2d   phosphate\n' %(i,temp_resname,temp_sel.n_atoms))
 
 		elif temp_resname in triphos.resnames:
