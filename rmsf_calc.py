@@ -20,8 +20,8 @@ flush = sys.stdout.flush
 # VARIABLE DECLARATION
 
 config_file = sys.argv[1]	# Local or Global positon of the config file that holds all the values for the parameters
-necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file'] ###
-all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','system','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','protein_selection','write_summary','summary_filename']
+necessary_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','Wrapped','rmsf_filename','selection_file'] ###
+all_parameters = ['avg_pdb','pdb_file','traj_loc','start','end','Wrapped','rmsf_filename','selection_file','alignment','important','substrate','protein_selection','write_summary','summary_filename']
 
 sugar = "name C5' C4' O4' C1' C3' C2' O2' " + " C5* C4* O4* C1* C3* O3* C2* O2* "		# NO HYDROGENS; DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...; the atoms with * are found in triphosphates;
 #sugar = "name C5' H5' H5'' C4' H4' O4' C1' H1' C3' H3' C2' O2' HO2'" + " C5* H50 H51 C4* H40 O4* C1* H10 C3* H30 O3* H3' C2* H20 O2* H2'"		# DOES NOT INCLUDE THE O5' atom (which I will include in the phosphate atom selection string...; the atoms with * are found in triphosphates;
@@ -257,7 +257,7 @@ dist2 = sqrt(dist2)
 
 # ----------------------------------------
 # WRITING RMSF RESULTS OUT TO FILE
-with open('%s.dat' %(parameters['rmsf_filename']),'w') as f:
+with open(parameters['rmsf_filename'],'w') as f:
 	np.savetxt(f,dist2)
 
 if parameters['write_summary']:		# Test if 'write_summary' key is equal to True
